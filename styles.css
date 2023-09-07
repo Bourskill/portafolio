@@ -136,7 +136,7 @@ nav button:focus {
 #descripcion {
     min-height: 600px;
     width: 100%;
-    padding: 100px 50px 100px 70px;
+    padding: 100px 70px 100px 70px;
     margin-top: 40px;
     border-radius: 20px;
     background-color: white;
@@ -222,6 +222,9 @@ nav button:focus {
 
 /* Estilos para pantallas más pequeñas */
 @media (max-width: 768px) {
+    #descripcion {
+        padding: 70px 30px 70px 30px;
+    }
     .descriptext {
         flex-direction: column;
     }
