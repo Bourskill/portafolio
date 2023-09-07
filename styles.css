@@ -1,0 +1,266 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+:root {
+    --azul1: #00A6FB;
+    --azul2: #0582CA;
+    --azul3: #006494;
+    --azul4: #003554;
+    --azul5: #051923;
+}
+
+::selection {
+    color: white;
+    background-color: black;
+}
+
+
+
+/* Estilos del cuerpo */
+body {
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 30px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+
+
+/* Estilos de la barra de navegación */
+nav {
+    width: min(30%, 300px);
+    height: 550px;
+    background-color: var(--azul2);
+    color: white;
+    padding: 25px;
+    border-radius: 20px;
+    top: 10px;
+    position: sticky;
+    transition: 1s;
+}
+
+nav h4 {
+    margin-top: -15px;
+    font-weight: 400;
+}
+
+nav button {
+    color: white;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    transition: 0.1s ease-out, transform 1s, border 0.1s ease-out;
+}
+
+nav button span {
+    margin-left: 20px;
+}
+
+nav button i {
+    width: 10px;
+}
+
+nav button:hover {
+    transform: translateX(15px);
+}
+
+nav button:focus {
+    transform: translateX(15px);
+    border-left: 5px solid white;
+}
+
+
+
+/* Estilos del contenedor principal */
+.contenedor {
+    width: calc(98% - (350px + 4%));
+    max-width: 950px;
+    height: 2000px;
+    transition: 1s;
+}
+
+
+
+/* Estilos de la sección de inicio */
+#inicio {
+    width: 100%;
+    height: 600px;
+    background-color: black;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid white;
+}
+
+#inicio img {
+    opacity: .3;
+}
+
+.titulo {
+    width: 60%;
+    font-size: 130%;
+    color: white;
+    position: absolute;
+    left: 5%;
+    top: 30%;
+}
+
+.titulo p {
+    font-weight: 300;
+    margin-top: -15px;
+    line-height: 1.5;
+}
+
+
+
+/* Estilos de la sección de descripción */
+#descripcion {
+    min-height: 600px;
+    width: 100%;
+    padding: 100px 50px 100px 70px;
+    margin-top: 40px;
+    border-radius: 20px;
+    background-color: white;
+    color: var(--azul2);
+}
+
+#descripcion p {
+    margin-top: -10px;
+    color: rgb(105, 105, 105);
+    font-size: 90%;
+    line-height: 1.5;
+    font-weight: 350;
+}
+
+#descripcion>h1 {
+    color: black;
+    font-size: 120%;
+}
+
+#descripcion>h1:after {
+    content: "";
+    background: var(--azul1);
+    border-radius: 25px;
+    display: block;
+    height: 5px;
+    margin-top: 14px;
+    width: 30px;
+}
+
+.descriptext {
+    width: 100%;
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+}
+
+.fotodes {
+    width: 25%;
+    height: fit-content;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.textdes {
+    width: 70%;
+}
+
+.textdes>h2 {
+    font-size: 200%;
+}
+.infodes{
+    display: flex;
+    justify-content: center;
+}
+.infodes button {
+    background-color: var(--azul1);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 10px;
+}
+.infodes button span{
+    font-size: 90%;
+   margin-left: 10px;
+}
+
+.infodes button:hover {
+    background-color: #00a7fbde;
+    transform: scale(1.03);
+}
+
+.infodes button:active {
+    background-color: #0091d9;
+    transform: scale(0.9);
+}
+
+
+
+
+
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .descriptext {
+        flex-direction: column;
+    }
+
+    .textdes {
+        width: 100%;
+    }
+
+    .fotodes {
+        width: 40%;
+    }
+
+    .titulo {
+        top: 25%;
+    }
+}
+
+@media (max-width: 1080px) {
+    #inicio {
+        height: 400px;
+        font-size: 70%;
+    }
+
+    .titulo p {
+        line-height: 1.7;
+    }
+
+    nav {
+        position: absolute;
+        left: 0%;
+        transform: translateX(-120%);
+        width: 70%;
+        max-width: none;
+    }
+
+    .contenedor {
+        position: absolute;
+        width: 95%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
