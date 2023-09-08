@@ -498,6 +498,10 @@ nav button:focus {
     #servicios {
         padding: 70px 30px 70px 30px;
     }
+    #herramientas {
+        height: 550px;
+        padding: 70px 30px 70px 30px;
+    }
 
     .cell {
         padding-left: 0px;
