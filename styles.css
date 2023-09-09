@@ -100,7 +100,7 @@ nav button:focus {
     width: calc(98% - (350px + 4%));
     max-width: 1000px;
     transition: 1s;
-    margin-bottom: 500px;
+    margin-bottom: 300px;
 }
 
 article>h1 {
@@ -354,6 +354,7 @@ article>h1:after {
     border-radius: 10px;
     border: 1px solid #00a7fb7f;
     padding: 20px 20px 10px 20px;
+    user-select: none;
 }
 
 .servicio:hover {
@@ -536,12 +537,150 @@ article>h1:after {
 
 
 
+/* Estilos de la sección de herramientas */
+#contacto {
+    width: 100%;
+    padding: 70px 70px 120px 70px;
+    margin-top: 40px;
+    border-radius: 20px;
+    background-color: white;
+    color: rgb(82, 82, 82);
+}
+.contcontac {
+    width: 100%;
+    margin-top: 80px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contcontac h2{
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+
+
+
+
+.continfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.itemcont {
+    display: flex;
+
+}
+
+.itemcont i {
+    color: var(--azul1);
+    font-size: 150%;
+}
+
+.contdatos {
+    flex: 1;
+    margin-left: 15px;
+}
+
+.contdatos h3 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.contdatos span {
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+
+
+
+
+.contform {
+    flex: 3;
+}
+
+.contform form {
+    position: relative;
+}
+
+.contform label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-weight: 300;
+
+}
+
+.contform input[type="text"],
+.contform input[type="email"],
+.contform textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(155, 155, 155);
+    border-radius: 10px;
+    transition: border-color 0.3s;
+}
+
+.contform input[type="text"]:focus,
+.contform input[type="email"]:focus,
+.contform textarea:focus {
+    outline: 2px solid var(--azul1);
+}
+
+.contform textarea {
+    resize: none;
+    min-height: 100px;
+    overflow-y: hidden; 
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    display: none;
+    position: absolute;
+    right: 0;
+    margin-top: -15px;
+}
+
+.submit-btn {
+    background-color: var(--azul1);
+    color: #fff;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 700;
+}
+
+.submit-btn:hover {
+    background-color: var(--azul1);
+}
+
+
+
+
+
+
+
 
 
 /* Estilos para pantallas más pequeñas */
 @media (max-width: 768px) {
+    .contcontac {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+
+
     #experiencia {
-        padding: 70px 30px 170px 30px;
+        padding: 70px 30px 120px 30px;
     }
 
     #acerca {
@@ -549,7 +688,7 @@ article>h1:after {
     }
 
     #educacion {
-        padding: 70px 30px 170px 30px;
+        padding: 70px 30px 120px 30px;
     }
 
     #servicios {
@@ -580,6 +719,15 @@ article>h1:after {
     .titulo {
         top: 25%;
     }
+
+    .lineheight {
+        height: 108%;
+    }
+
+    .linexp>.lineheight {
+        height: 105%;
+    }
+
 }
 
 @media (max-width: 1080px) {

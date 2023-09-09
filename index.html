@@ -38,7 +38,7 @@
         <h4>Diseñador gráfico</h4>
 
         <button onclick="window.location.href='#inicio'">
-            <i class="fa-solid fa-house"></i><span>inicio</span>
+            <i class="fa-solid fa-house"></i><span>Inicio</span>
         </button>
         <button onclick="window.location.href='#acerca';">
             <i class="fa-solid fa-user"></i></i><span>Acerca de mí</span>
@@ -58,8 +58,8 @@
         <button onclick="window.location.href='#herramientas';">
             <i class="fa-solid fa-laptop-code"></i><span>Herramientas</span>
         </button>
-        <button onclick="window.location.href='#';">
-            <i class="fa-solid fa-address-card"></i><span>contacto</span>
+        <button onclick="window.location.href='#contacto';">
+            <i class="fa-solid fa-address-card"></i><span>Contacto</span>
         </button>
     </nav>
 
@@ -214,10 +214,13 @@
                         <h4>MT Publicidad</h4>
                         <div class="expinfo">
                             <h3>Diseñador Gráfico y Operario de Producción</h3>
-                            <p>En mi rol, manipulé software de edición, especialmente la suit de Adobe, y operé maquinaria de
-                                producción, incluyendo cortadoras láser, plotters de corte e impresion y termofijadoras. <br><br> Esto me
+                            <p>En mi rol, manipulé software de edición, especialmente la suit de Adobe, y operé
+                                maquinaria de
+                                producción, incluyendo cortadoras láser, plotters de corte e impresion y termofijadoras.
+                                <br><br> Esto me
                                 permitió abordar proyectos de manera integral y garantizar resultados de alta calidad en
-                                diversos materiales y productos.</p>
+                                diversos materiales y productos.
+                            </p>
                         </div>
                         <h5>2021-2022</h5>
                     </div>
@@ -252,7 +255,85 @@
             </div>
         </article>
 
+        <article id="contacto">
+            <h1>Contacto</h1>
+            <div class="contcontac">
+                <h2>¡Conversemos ahora!&nbsp; Rellena el formulario y estaré en contacto contigo en menos de 24 horas.</h2>
+                <div class="continfo">
+                    <div class="itemcont">
+                        <i class="fa-solid fa-phone"></i>
+                        <div class="contdatos">
+                            <h3>Teléfono.</h3>
+                            <span>+57 3026056195</span>
+                        </div>
+                    </div>
+                    <div class="itemcont">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="contdatos">
+                            <h3>Correo.</h3>
+                            <span>rgarcia591@misena.edu.co</span>
+                        </div>
+                    </div>
+                    <div class="itemcont">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="contdatos">
+                            <h3>Ubicacion.</h3>
+                            <span>Valle del cauca - Yumbo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contform">
+                    <form action="procesar_formulario.php" method="post" onsubmit="return validarFormulario();">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre">
+                        <span class="error" id="nombreError">Campo obligatorio*</span>
+
+                        <label for="asunto">Asunto:</label>
+                        <input type="text" id="asunto" name="asunto">
+                        <span class="error" id="asuntoError">Campo obligatorio*</span>
+
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email">
+                        <span class="error" id="emailError">Campo obligatorio*</span>
+
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje"></textarea>
+                        <span class="error" id="mensajeError">Campo obligatorio*</span>
+
+                        <button type="submit" class="submit-btn">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </article>
+
     </main>
+    <script>
+        function validarFormulario() {
+            var campos = ["nombre", "asunto", "email", "mensaje"];
+            var hasError = false;
+
+            campos.forEach(function (campo) {
+                var input = document.getElementById(campo);
+                var error = document.getElementById(campo + "Error");
+
+                if (input.value.trim() === "") {
+                    error.style.display = "block";
+                    hasError = true;
+                } else {
+                    error.style.display = "none";
+                }
+            });
+
+            return !hasError;
+        }
+
+        // Agregar evento de cambio de tamaño al textarea
+        var mensajeTextarea = document.getElementById("mensaje");
+        mensajeTextarea.addEventListener("input", function () {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+    </script>
 
 </body>
 
