@@ -30,7 +30,7 @@ body {
     font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 50px;
     padding-top: 80px;
 }
 
@@ -546,6 +546,7 @@ article>h1:after {
     background-color: white;
     color: rgb(82, 82, 82);
 }
+
 .contcontac {
     width: 100%;
     margin-top: 80px;
@@ -554,7 +555,7 @@ article>h1:after {
     flex-wrap: wrap;
 }
 
-.contcontac h2{
+.contcontac h2 {
     font-weight: 400;
     margin-bottom: 40px;
 }
@@ -635,7 +636,7 @@ article>h1:after {
 .contform textarea {
     resize: none;
     min-height: 100px;
-    overflow-y: hidden; 
+    overflow-y: hidden;
 }
 
 .error {
@@ -672,15 +673,13 @@ article>h1:after {
 
 /* Estilos para pantallas más pequeñas */
 @media (max-width: 768px) {
-    .contcontac {
-        flex-direction: column;
-        gap: 50px;
+
+    #contacto {
+        padding: 70px 30px 100px 30px;
     }
 
-
-
     #experiencia {
-        padding: 70px 30px 120px 30px;
+        padding: 70px 30px 150px 30px;
     }
 
     #acerca {
@@ -697,7 +696,7 @@ article>h1:after {
 
     #herramientas {
         height: 550px;
-        padding: 70px 30px 70px 30px;
+        padding: 70px 30px 100px 30px;
     }
 
     .cell {
@@ -726,6 +725,10 @@ article>h1:after {
 
     .linexp>.lineheight {
         height: 105%;
+    }
+
+    .contcontac {
+        flex-direction: column;
     }
 
 }
