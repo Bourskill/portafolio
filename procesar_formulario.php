@@ -1,14 +1,11 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $nombre = $_POST["nombre"];
     $asunto = $_POST["asunto"];
     $email = $_POST["email"];
     $mensaje = $_POST["mensaje"];
 
-    $destinatario = "richard003800@gmail.com"; // Reemplaza con tu dirección de correo
-
+    $destinatario = "richard003800@gmail.com"; 
     $asunto_email = "Nuevo mensaje desde el formulario de contacto";
 
     $mensaje_email = "Nombre: $nombre\n";
@@ -16,8 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensaje_email .= "Correo Electrónico: $email\n";
     $mensaje_email .= "Mensaje:\n $mensaje";
 
-    mail($destinatario, $asunto_email, $mensaje_email);
+    mail($destinatario, $asunto_email, utf8_decode($mensaje_email) , $header);
 
-    header("Location: ./index.html");
-}
+    header("Location: index.html");
+
 ?>
