@@ -1,0 +1,32 @@
+
+.contenvio {
+    width: 80%;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px;
+
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.contenvio>* {
+    flex: 1;
+}
+
+.contenvio button {
+    background-color: var(--azul1);
+    flex: 1;
+    border-radius: 10px;
+    color: white;
+    padding: 10% 10%;
+    margin-top: 20px;
+}
