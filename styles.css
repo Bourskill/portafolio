@@ -616,6 +616,7 @@ article>h1:after {
 
 }
 
+form>div,
 .contform input[type="text"],
 .contform input[type="email"],
 .contform textarea {
