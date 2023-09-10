@@ -27,6 +27,17 @@
     flex: 1;
     border-radius: 10px;
     color: white;
-    padding: 10% 10%;
+    padding: 30px 10px;
     margin-top: 20px;
+    font-size: 120%;
+}
+
+.contenvio p {
+    font-size: 120%;
+}
+
+.contenvio p span{
+    font-size: 90%;
+    font-weight: 400;
+    color: var(--grisclarito);
 }

@@ -201,7 +201,7 @@ article>h1:after {
 }
 
 .container h4 {
-    color: rgb(155, 155, 155);
+    color: var(--grisclarito);
     font-weight: 400;
 }
 
@@ -374,7 +374,7 @@ article>h1:after {
 }
 
 .exp h4 {
-    color: rgb(155, 155, 155);
+    color: var(--grisclarito);
     font-weight: 300;
     font-size: 100%;
 }
@@ -574,7 +574,7 @@ form>div{
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid rgb(155, 155, 155);
+    border: 1px solid var(--grisclarito);
     border-radius: 10px;
     transition: border-color 0.3s;
 }
