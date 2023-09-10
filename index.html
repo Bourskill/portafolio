@@ -286,7 +286,7 @@
                     </div>
                 </div>
                 <div class="contform">
-                    <form action="procesar_formulario.php" method="post" onsubmit="return validarFormulario();">
+                    <form id="form" action="procesar_formulario.php" method="post">
                         <label for="nombre">Nombre:</label>
                         <input type="text" id="nombre" name="nombre">
                         <span class="error" id="nombreError">Campo obligatorio*</span>
@@ -306,7 +306,7 @@
                         <button type="submit" class="submit-btn">Enviar</button>
                     </form>
                 </div>
-            </div>
+
         </article>
 
     </main>
@@ -336,6 +336,7 @@
             this.style.height = 'auto';
             this.style.height = (this.scrollHeight) + 'px';
         });
+
     </script>
 
 </body>
