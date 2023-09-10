@@ -616,7 +616,9 @@ article>h1:after {
 
 }
 
-form>div,
+form>div{
+    margin-bottom: 20px;
+}
 .contform input[type="text"],
 .contform input[type="email"],
 .contform textarea {
