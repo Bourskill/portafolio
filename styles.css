@@ -53,7 +53,7 @@ button {
 nav {
     width: min(30%, 300px);
     height: 600px;
-    background-color: red;
+    background-color: var(--azul2);
     color: white;
     padding: 25px;
     border-radius: 20px;
