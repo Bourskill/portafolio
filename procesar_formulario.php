@@ -16,6 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     mail($destinatario, $asunto_email, $mensaje_email);
 
-    header("Location: formulario.html");
+    header("Location: index.html");
 }
 ?>
