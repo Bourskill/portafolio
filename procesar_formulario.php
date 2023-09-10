@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST["nombre"];
     $asunto = $_POST["asunto"];
@@ -16,6 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     mail($destinatario, $asunto_email, $mensaje_email);
 
-    header("Location: index.html");
+    header("Location: ./index.html");
 }
 ?>
