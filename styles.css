@@ -635,7 +635,9 @@ form>div{
 .contform textarea:focus {
     outline: 2px solid var(--azul1);
 }
-
+.g-recaptcha div{
+    max-width: 50%;
+}
 .contform textarea {
     resize: none;
     min-height: 100px;
