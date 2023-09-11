@@ -339,8 +339,10 @@
         // Agrega un evento para ocultar el mensaje de error cuando se aprueba el captcha
         grecaptcha.ready(function () {
             grecaptcha.execute('6LdCahYoAAAAAGkQtrr1pCXT5_t3TPQonXLRwloV', { action: 'submit' }).then(function (token) {
+                console.log("Token del reCAPTCHA:", token); // Agrega este console.log
                 // Aquí verifica si el captcha se aprobó
                 if (token) {
+                    console.log("Captcha aprobado."); // Agrega este console.log
                     errorMessage.textContent = ""; // Limpiar el mensaje de error
                     errorMessage.style.display = "none"; // Ocultar el mensaje de error
                 }
