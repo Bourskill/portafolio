@@ -305,6 +305,7 @@
                         <span class="error" id="mensajeError">Campo obligatorio*</span>
 
                         <div data-netlify-recaptcha="true"></div>
+                        <span id="error-message" style="color: red;"></span>
 
                         <button type="submit" class="submit-btn">Enviar</button>
                     </form>
@@ -320,10 +321,15 @@
                 return document.getElementById(field).value.trim() !== '';
             });
             var captcha = grecaptcha.getResponse();
+            var errorMessage = document.getElementById('error-message'); // Obtener el elemento span
 
             if (!isValid || !captcha) {
-                alert("Por favor, complete todos los campos y marque el captcha antes de enviar el formulario.");
+                errorMessage.textContent = "Por favor, complete todos los campos y marque el captcha antes de enviar el formulario.";
+                errorMessage.style.display = "block"; // Mostrar el mensaje de error
                 e.preventDefault();
+            } else {
+                errorMessage.textContent = ""; // Limpiar el mensaje de error si todo es válido
+                errorMessage.style.display = "none"; // Ocultar el mensaje de error
             }
         });
 
