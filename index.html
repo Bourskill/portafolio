@@ -33,6 +33,9 @@
 </head>
 
 <body>
+    <header class="hropciones">
+        <i class="fa-solid fa-bars"></i>
+    </header>
 
     <nav>
         <h1>Richard Garcia</h1>
@@ -304,8 +307,7 @@
                         <textarea id="mensaje" name="mensaje"></textarea>
                         <span class="error" id="mensajeError">Campo obligatorio*</span>
 
-                        <div data-netlify-recaptcha="true"></div>
-                        <span id="error-message" style="color: red;"></span>
+                        <div data-netlify-recaptcha="true" required></div>
 
                         <button type="submit" class="submit-btn">Enviar</button>
                     </form>
@@ -315,43 +317,10 @@
 
     </main>
 
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LeJqxYoAAAAAMDMsUYwErW6xFqi6evUdQIVipKG"></script>
-
     <script>
-        var errorMessage = document.getElementById('error-message'); // Obtener el elemento span
-
-        document.getElementById('form').addEventListener('submit', function (e) {
-            var fields = ['nombre', 'asunto', 'email', 'mensaje'];
-            var isValid = fields.every(function (field) {
-                return document.getElementById(field).value.trim() !== '';
-            });
-            var captcha = grecaptcha.getResponse();
-
-            if (!isValid) {
-                errorMessage.textContent = "Por favor, complete todos los campos antes de enviar el formulario.";
-                errorMessage.style.display = "block"; // Mostrar el mensaje de error
-                e.preventDefault();
-            } else if (!captcha) {
-                errorMessage.textContent = "Por favor, marque el captcha antes de enviar el formulario.";
-                errorMessage.style.display = "block"; // Mostrar el mensaje de error
-                e.preventDefault();
-            }
-        });
-
-        // Agrega un evento para ocultar el mensaje de error cuando se aprueba el captcha
-        grecaptcha.ready(function () {
-            grecaptcha.execute('6LeJqxYoAAAAAMDMsUYwErW6xFqi6evUdQIVipKG', { action: 'submit' }).then(function (token) {
-                console.log("Token del reCAPTCHA:", token); // Agrega este console.log
-                // Aquí verifica si el captcha se aprobó
-                if (token) {
-                    console.log("Captcha aprobado."); // Agrega este console.log
-                    errorMessage.textContent = ""; // Limpiar el mensaje de error
-                    errorMessage.style.display = "none"; // Ocultar el mensaje de error
-                }
-            });
-        });
-
+        document.querySelector(".submit-btn").addEventListener("click", (e) => {
+            e.preventDefault();
+        })
 
 
 

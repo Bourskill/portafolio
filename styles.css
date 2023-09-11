@@ -4,11 +4,32 @@ body {
     gap: 50px;
     padding-top: 80px;
 }
+
+.hropciones {
+    width: 95%;
+    height: 70px;
+    border-radius: 15px;
+    background-color: var(--azul1);
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 20px;
+    z-index: 999999;
+    margin-top: -95px;
+    display: none;
+}
+
+.hropciones i {
+    font-size: 200%;
+}
+
+
 /* Estilos de la barra de navegación */
 nav {
     width: min(30%, 300px);
     height: 600px;
-    background-color: var(--azul2);
+    background-color: var(--azul1);
     color: white;
     padding: 25px;
     border-radius: 20px;
@@ -571,9 +592,10 @@ article>h1:after {
 
 }
 
-form>div{
+form>div {
     margin-bottom: 20px;
 }
+
 .contform input[type="text"],
 .contform input[type="email"],
 .contform textarea {
@@ -590,9 +612,11 @@ form>div{
 .contform textarea:focus {
     outline: 2px solid var(--azul1);
 }
-.g-recaptcha div{
+
+.g-recaptcha div {
     max-width: 50%;
 }
+
 .contform textarea {
     resize: none;
     min-height: 100px;
@@ -694,6 +718,14 @@ form>div{
 }
 
 @media (max-width: 1080px) {
+    body{
+        padding-top: 100px;
+    }
+    .hropciones {
+        display: block;
+
+    }
+
     #inicio {
         height: 400px;
         font-size: 70%;
