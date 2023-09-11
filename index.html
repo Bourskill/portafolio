@@ -314,9 +314,9 @@
         </article>
 
     </main>
-    
+
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=6LdCahYoAAAAAGkQtrr1pCXT5_t3TPQonXLRwloV"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeJqxYoAAAAAMDMsUYwErW6xFqi6evUdQIVipKG"></script>
 
     <script>
         var errorMessage = document.getElementById('error-message'); // Obtener el elemento span
@@ -341,7 +341,7 @@
 
         // Agrega un evento para ocultar el mensaje de error cuando se aprueba el captcha
         grecaptcha.ready(function () {
-            grecaptcha.execute('6LdCahYoAAAAAGkQtrr1pCXT5_t3TPQonXLRwloV', { action: 'submit' }).then(function (token) {
+            grecaptcha.execute('6LeJqxYoAAAAAMDMsUYwErW6xFqi6evUdQIVipKG', { action: 'submit' }).then(function (token) {
                 console.log("Token del reCAPTCHA:", token); // Agrega este console.log
                 // Aquí verifica si el captcha se aprobó
                 if (token) {
