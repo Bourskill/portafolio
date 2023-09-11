@@ -287,20 +287,20 @@
                     </div>
                 </div>
                 <div class="contform">
-                    <form id="form" action="/pages/html/form.html" method="POST" netlify >
+                    <form id="form" action="/pages/html/form.html" method="POST" netlify>
                         <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre">
+                        <input type="text" id="nombre" name="nombre" required>
                         <span class="error" id="nombreError">Campo obligatorio*</span>
 
                         <label for="asunto">Asunto:</label>
-                        <input type="text" id="asunto" name="asunto">
+                        <input type="text" id="asunto" name="asunto" required>
                         <span class="error" id="asuntoError">Campo obligatorio*</span>
 
                         <label for="email">Correo Electrónico:</label>
-                        <input type="email" id="email" name="email">
+                        <input type="email" id="email" name="email" required>
                         <span class="error" id="emailError">Campo obligatorio*</span>
 
-                        <label for="mensaje">Mensaje:</label>
+                        <label for="mensaje" required>Mensaje:</label>
                         <textarea id="mensaje" name="mensaje"></textarea>
                         <span class="error" id="mensajeError">Campo obligatorio*</span>
 
@@ -314,24 +314,19 @@
 
     </main>
     <script>
-        function validarFormulario() {
-            var campos = ["nombre", "asunto", "email", "mensaje"];
-            var hasError = false;
-
-            campos.forEach(function (campo) {
-                var input = document.getElementById(campo);
-                var error = document.getElementById(campo + "Error");
-
-                if (input.value.trim() === "") {
-                    error.style.display = "block";
-                    hasError = true;
-                } else {
-                    error.style.display = "none";
-                }
+        document.getElementById('form').addEventListener('submit', function (e) {
+            var fields = ['nombre', 'asunto', 'email', 'mensaje'];
+            var isValid = fields.every(function (field) {
+                return document.getElementById(field).value.trim() !== '';
             });
+            var captcha = grecaptcha.getResponse();
 
-            return !hasError;
-        }
+            if (!isValid || !captcha) {
+                alert("Por favor, complete todos los campos y marque el captcha antes de enviar el formulario.");
+                e.preventDefault();
+            }
+        });
+
 
         // Agregar evento de cambio de tamaño al textarea
         var mensajeTextarea = document.getElementById("mensaje");
