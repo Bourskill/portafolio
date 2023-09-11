@@ -5,24 +5,42 @@ body {
     padding-top: 80px;
 }
 
+
+
+
+
+
+
+
 .hropciones {
     width: 95%;
-    height: 70px;
     border-radius: 15px;
     background-color: var(--azul1);
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    padding: 20px;
+    top: 10px;
+    position: absolute;
+    padding: 15px;
     z-index: 999999;
-    margin-top: -95px;
-    display: none;
+    margin: 0 auto;
+    transform: translateY(-120px);
 }
 
 .hropciones i {
+    color: white;
     font-size: 200%;
+    -webkit-text-stroke: 2px white;
 }
+
+.hrmenu {
+    margin-left: 10px;
+    padding: 10px;
+}
+
+
+
+
+
+
+
 
 
 /* Estilos de la barra de navegación */
@@ -69,6 +87,22 @@ nav button:focus {
     border-left: 5px solid white;
 }
 
+.navclose {
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 170%;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
 
 
 /* Estilos del contenedor principal */
@@ -76,7 +110,7 @@ nav button:focus {
     width: calc(98% - (350px + 4%));
     max-width: 1000px;
     transition: 1s;
-    margin-bottom: 300px;
+    margin-bottom: 100px;
 }
 
 article>h1 {
@@ -105,6 +139,8 @@ article>h1:after {
     overflow: hidden;
     position: relative;
     border: 2px solid white;
+    
+    scroll-margin-top: 100px;
 }
 
 #inicio img {
@@ -130,6 +166,9 @@ article>h1:after {
 
 
 
+
+
+
 /* Estilos de la sección de descripción */
 #acerca {
     width: 100%;
@@ -139,6 +178,9 @@ article>h1:after {
     border-radius: 20px;
     background-color: white;
     color: var(--azul2);
+
+    
+    scroll-margin-top: 100px;
 }
 
 #acerca p {
@@ -207,6 +249,10 @@ article>h1:after {
 
 
 
+
+
+
+
 /* Estilos de la sección de educacion */
 #educacion {
     width: 100%;
@@ -214,6 +260,9 @@ article>h1:after {
     margin-top: 40px;
     border-radius: 20px;
     background-color: white;
+
+    
+    scroll-margin-top: 100px;
 }
 
 .container {
@@ -303,6 +352,9 @@ article>h1:after {
     border-radius: 20px;
     background-color: white;
     color: rgb(82, 82, 82);
+
+    
+    scroll-margin-top: 100px;
 }
 
 
@@ -343,6 +395,10 @@ article>h1:after {
 
 
 
+
+
+
+
 #experiencia {
     width: 100%;
     padding: 70px 70px 120px 70px;
@@ -353,6 +409,9 @@ article>h1:after {
 
     display: flex;
     flex-direction: column;
+
+    
+    scroll-margin-top: 100px;
 }
 
 .contexp {
@@ -451,6 +510,9 @@ article>h1:after {
 
     display: flex;
     flex-direction: column;
+
+    
+    scroll-margin-top: 100px;
 }
 
 .contherr {
@@ -513,6 +575,9 @@ article>h1:after {
 
 
 
+
+
+
 /* Estilos de la sección de herramientas */
 #contacto {
     width: 100%;
@@ -521,6 +586,9 @@ article>h1:after {
     border-radius: 20px;
     background-color: white;
     color: rgb(82, 82, 82);
+
+    
+    scroll-margin-top: 100px;
 }
 
 .contcontac {
@@ -536,10 +604,7 @@ article>h1:after {
     margin-bottom: 40px;
 }
 
-
-
-
-
+/* divicion */
 .continfo {
     flex: 1;
     display: flex;
@@ -572,10 +637,7 @@ article>h1:after {
     font-weight: 300;
 }
 
-
-
-
-
+/* divicion */
 .contform {
     flex: 3;
 }
@@ -655,6 +717,9 @@ form>div {
 
 
 
+
+
+
 /* Estilos para pantallas más pequeñas */
 @media (max-width: 768px) {
 
@@ -718,12 +783,10 @@ form>div {
 }
 
 @media (max-width: 1080px) {
-    body{
-        padding-top: 100px;
-    }
-    .hropciones {
-        display: block;
-
+    body {
+        flex-direction: column;
+        padding-top: 20px;
+        gap: 40px;
     }
 
     #inicio {
@@ -735,16 +798,27 @@ form>div {
         line-height: 1.7;
     }
 
+    .hropciones {
+        position: sticky;
+        transform: translateY(0);
+    }
+
+
     nav {
-        position: absolute;
+        position: fixed;
         left: 0%;
         transform: translateX(-120%);
-        width: 70%;
+        width: auto;
         max-width: none;
+        z-index: 9999;
+    }
+
+    .navclose {
+        display: block;
     }
 
     .contenedor {
-        position: absolute;
+        position: relative;
         width: 95%;
         left: 50%;
         transform: translateX(-50%);

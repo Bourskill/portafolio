@@ -34,10 +34,13 @@
 
 <body>
     <header class="hropciones">
-        <i class="fa-solid fa-bars"></i>
+        <button class="hrmenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </header>
 
-    <nav>
+    <nav id="barranav">
+        <i class="fa-solid fa-circle-xmark navclose"></i>
         <h1>Richard Garcia</h1>
         <h4>Diseñador gráfico</h4>
 
@@ -324,6 +327,36 @@
         mensajeTextarea.addEventListener("input", function () {
             this.style.height = 'auto';
             this.style.height = (this.scrollHeight) + 'px';
+        });
+
+        // Desplegue de menu flotante
+        const barraNav = document.querySelector("#barranav");
+        const closeNav = barraNav.querySelector(".navclose");
+        const buttonsNav = barraNav.querySelectorAll("button");
+        const menuFlotante = document.querySelector(".hropciones");
+
+        menuFlotante.addEventListener("click", (e) => {
+            if (e.target.closest(".hrmenu")) {
+                barraNav.style.left = "2.5%";
+                barraNav.style.transform = "translateX(0%)";
+                menuFlotante.style.transform = "translateY(-120px)";
+            }
+        });
+
+        function normalidadNav() {
+            barraNav.style.left = "";
+            barraNav.style.transform = "";
+            menuFlotante.style.transform = "";
+        };
+
+        buttonsNav.forEach(element => {
+            element.addEventListener("click", () => {
+                normalidadNav();
+            });
+        });
+
+        closeNav.addEventListener("click", () => {
+            normalidadNav();
         });
 
     </script>
