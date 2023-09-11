@@ -315,22 +315,33 @@
 
     </main>
     <script>
+        var errorMessage = document.getElementById('error-message'); // Obtener el elemento span
+
         document.getElementById('form').addEventListener('submit', function (e) {
             var fields = ['nombre', 'asunto', 'email', 'mensaje'];
             var isValid = fields.every(function (field) {
                 return document.getElementById(field).value.trim() !== '';
             });
             var captcha = grecaptcha.getResponse();
-            var errorMessage = document.getElementById('error-message'); // Obtener el elemento span
 
-            if (!isValid || !captcha) {
-                errorMessage.textContent = "Por favor, complete todos los campos y marque el captcha antes de enviar el formulario.";
+            if (!isValid) {
+                errorMessage.textContent = "Por favor, complete todos los campos antes de enviar el formulario.";
                 errorMessage.style.display = "block"; // Mostrar el mensaje de error
                 e.preventDefault();
-            } else {
-                errorMessage.textContent = ""; // Limpiar el mensaje de error si todo es válido
-                errorMessage.style.display = "none"; // Ocultar el mensaje de error
+            } else if (!captcha) {
+                errorMessage.textContent = "Por favor, marque el captcha antes de enviar el formulario.";
+                errorMessage.style.display = "block"; // Mostrar el mensaje de error
+                e.preventDefault();
             }
+        });
+
+        // Agrega un evento para ocultar el mensaje de error cuando se aprueba el captcha
+        grecaptcha.ready(function () {
+            grecaptcha.execute('YOUR_SITE_KEY', { action: 'submit' }).then(function (token) {
+                grecaptcha.getResponse();
+                errorMessage.textContent = ""; // Limpiar el mensaje de error
+                errorMessage.style.display = "none"; // Ocultar el mensaje de error
+            });
         });
 
 
