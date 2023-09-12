@@ -59,9 +59,9 @@
         <button onclick="window.location.href='#experiencia';">
             <i class="fa-solid fa-laptop-file"></i><span>Experiencia</span>
         </button>
-        <button onclick="window.location.href='#';">
+        <!-- <button onclick="window.location.href='#';">
             <i class="fa-solid fa-briefcase"></i><span>Proyectos</span>
-        </button>
+        </button> -->
         <button onclick="window.location.href='#herramientas';">
             <i class="fa-solid fa-laptop-code"></i><span>Herramientas</span>
         </button>
@@ -99,7 +99,7 @@
                     <div class="infodes">
                         <button><i class="fa-solid fa-cloud-arrow-down"></i><span>Descargar HV</span></button>
                         <button onclick="window.location.href='#contacto';">
-                            <i class="fa-solid fa-envelope"></i><span>contactame</span>
+                            <i class="fa-solid fa-envelope"></i><span>contáctame</span>
                         </button>
                     </div>
                 </div>
@@ -315,51 +315,10 @@
                         <button type="submit" class="submit-btn">Enviar</button>
                     </form>
                 </div>
-
         </article>
-
     </main>
 
-    <script>
-
-        // Agregar evento de cambio de tamaño al textarea
-        var mensajeTextarea = document.getElementById("mensaje");
-        mensajeTextarea.addEventListener("input", function () {
-            this.style.height = 'auto';
-            this.style.height = (this.scrollHeight) + 'px';
-        });
-
-        // Desplegue de menu flotante
-        const barraNav = document.querySelector("#barranav");
-        const closeNav = barraNav.querySelector(".navclose");
-        const buttonsNav = barraNav.querySelectorAll("button");
-        const menuFlotante = document.querySelector(".hropciones");
-
-        menuFlotante.addEventListener("click", (e) => {
-            if (e.target.closest(".hrmenu")) {
-                barraNav.style.left = "2.5%";
-                barraNav.style.transform = "translateX(0%)";
-                menuFlotante.style.transform = "translateY(-120px)";
-            }
-        });
-
-        function normalidadNav() {
-            barraNav.style.left = "";
-            barraNav.style.transform = "";
-            menuFlotante.style.transform = "";
-        };
-
-        buttonsNav.forEach(element => {
-            element.addEventListener("click", () => {
-                normalidadNav();
-            });
-        });
-
-        closeNav.addEventListener("click", () => {
-            normalidadNav();
-        });
-
-    </script>
+   <script src="app.js"></script>
 
 </body>
 

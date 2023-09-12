@@ -2,7 +2,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 50px;
-    padding-top: 80px;
+    padding-top: 40px;
 }
 
 
@@ -15,13 +15,14 @@ body {
 .hropciones {
     width: 95%;
     border-radius: 15px;
-    background-color: var(--azul1);
+    background-color: transparent;
     top: 10px;
     position: absolute;
     padding: 15px;
     z-index: 999999;
     margin: 0 auto;
     transform: translateY(-120px);
+    border: 2px solid white;
 }
 
 .hropciones i {
@@ -33,6 +34,11 @@ body {
 .hrmenu {
     margin-left: 10px;
     padding: 10px;
+}
+
+.scrollhr{
+    border: none;
+    background-color: var(--azul1);
 }
 
 
@@ -51,9 +57,9 @@ nav {
     color: white;
     padding: 25px;
     border-radius: 20px;
-    top: 80px;
+    top: 40px;
     position: sticky;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 nav h4 {
@@ -82,7 +88,7 @@ nav button:hover {
     transform: translateX(15px);
 }
 
-nav button:focus {
+.btnfocus{
     transform: translateX(15px);
     border-left: 5px solid white;
 }
@@ -95,7 +101,6 @@ nav button:focus {
     font-size: 170%;
     cursor: pointer;
 }
-
 
 
 
@@ -140,7 +145,7 @@ article>h1:after {
     position: relative;
     border: 2px solid white;
     
-    scroll-margin-top: 100px;
+    scroll-margin-top: 40px;
 }
 
 #inicio img {
@@ -180,7 +185,7 @@ article>h1:after {
     color: var(--azul2);
 
     
-    scroll-margin-top: 100px;
+    scroll-margin-top: 40px;
 }
 
 #acerca p {
@@ -262,7 +267,7 @@ article>h1:after {
     background-color: white;
 
     
-    scroll-margin-top: 100px;
+    scroll-margin-top: 40px;
 }
 
 .container {
@@ -354,7 +359,7 @@ article>h1:after {
     color: rgb(82, 82, 82);
 
     
-    scroll-margin-top: 100px;
+    scroll-margin-top: 40px;
 }
 
 
@@ -411,7 +416,7 @@ article>h1:after {
     flex-direction: column;
 
     
-    scroll-margin-top: 100px;
+    scroll-margin-top: 40px;
 }
 
 .contexp {
@@ -512,7 +517,7 @@ article>h1:after {
     flex-direction: column;
 
     
-    scroll-margin-top: 100px;
+    scroll-margin-top: 40px;
 }
 
 .contherr {
@@ -588,7 +593,7 @@ article>h1:after {
     color: rgb(82, 82, 82);
 
     
-    scroll-margin-top: 100px;
+    scroll-margin-top: 40px;
 }
 
 .contcontac {
@@ -597,6 +602,7 @@ article>h1:after {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
+    font-size: 90%;
 }
 
 .contcontac h2 {
