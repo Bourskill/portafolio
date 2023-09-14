@@ -14,21 +14,35 @@ body {
 
 .hropciones {
     width: 95%;
+
     border-radius: 15px;
     background-color: transparent;
-    top: 10px;
-    position: absolute;
-    padding: 15px;
-    z-index: 999999;
-    margin: 0 auto;
-    transform: translateY(-120px);
     border: 2px solid white;
+    color: white;
+    padding: 10px;
+    margin: 0 auto;
+
+    position: absolute;
+    top: 10px;
+    transform: translateY(-120px);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 999999;
 }
 
 .hropciones i {
     color: white;
-    font-size: 200%;
+    font-size: 150%;
     -webkit-text-stroke: 2px white;
+}
+
+.hropciones h1 {
+    margin: 0;
+    font-size: 120%;
+    margin-right: 10px;
 }
 
 .hrmenu {
@@ -270,9 +284,9 @@ article>h1:after {
     scroll-margin-top: 40px;
 }
 
-#educacion p{
+#educacion p {
     margin-top: 50px;
-    color:  var(--grisclarito);
+    color: var(--grisclarito);
     font-size: 90%;
     font-weight: 300;
     line-height: 1.5;
@@ -365,6 +379,7 @@ article>h1:after {
 .celda>.circle:nth-child(3) {
     top: 50%;
 }
+
 .celda>.circle:nth-child(4) {
     top: 70%;
 }
@@ -525,6 +540,52 @@ article>h1:after {
 
 
 
+
+#proyectos {
+    width: 100%;
+    padding: 70px 70px 100px 70px;
+    margin-top: 40px;
+    border-radius: 20px;
+    background-color: white;
+    color: rgb(82, 82, 82);
+
+    scroll-margin-top: 40px;
+}
+
+.proyects {
+    width: 100%;
+
+    margin-top: 80px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.pro {
+    background-color: #f3f3f3;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.pro:hover {
+    transform: scale(1.03);
+}
+.pro img {
+    width: 70%;
+    object-fit: contain;
+}
+
+.pro h3 {
+    color: var(--grisclarito);
+    font-size: 80%;
+}
 
 
 
@@ -756,6 +817,9 @@ form>div {
 
 /* Estilos para pantallas más pequeñas */
 @media (max-width: 768px) {
+    #proyectos {
+        padding: 70px 30px 100px 30px;
+    }
 
     #contacto {
         padding: 70px 30px 100px 30px;
@@ -801,6 +865,11 @@ form>div {
     .titulo {
         top: 25%;
     }
+
+    .proyects {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+
 
     .linexp>.lineheight {
         height: 105%;
