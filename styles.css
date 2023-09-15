@@ -574,12 +574,20 @@ article>h1:after {
 
 
 }
+
 .pro:hover {
     transform: scale(1.03);
 }
+
+
 .pro img {
     width: 70%;
     object-fit: contain;
+}
+
+.pro i {
+    flex: 1;
+    font-size: 270%;
 }
 
 .pro h3 {
@@ -587,6 +595,11 @@ article>h1:after {
     font-size: 80%;
 }
 
+.pro:nth-child(5) img,
+.pro:nth-child(6) img {
+    width: 40%;
+    opacity: .8;
+}
 
 
 
@@ -810,6 +823,129 @@ form>div {
 
 
 
+#view {
+    width: 100%;
+
+    margin-top: 40px;
+    border-radius: 20px;
+    background-color: white;
+    color: rgb(82, 82, 82);
+
+    border: solid 2px white;
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+#view>img {
+    aspect-ratio: 16/9;
+
+}
+
+.contenidov {
+    padding: 70px 70px 120px 70px;
+}
+
+.contenidov li,
+.contenidov p {
+    color: var(--grisclarito);
+    line-height: 1.5;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+.contenidov ul {
+    margin-bottom: 60px;
+}
+.contenidov li {
+    margin-bottom: 20px;
+}
+
+.tit {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+
+.tit button span{
+    margin-right: 10px;
+}
+
+#view> button span{
+    margin-left: 10px;
+}
+
+.tit button,
+#view> button {
+    background-color: var(--azul1);
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: white;
+}
+
+#view> button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.tit button:hover {
+    background-color: var(--azul2);
+}
+
+
+.title h1 {
+    margin: 0;
+}
+
+.title span {
+    color: var(--grisclarito);
+    font-weight: 300;
+    margin-top: -25px;
+}
+
+
+
+
+
+
+
+.carousel {
+    background: #FAFAFA;
+    transition: all 0s;
+}
+
+.carousel * {
+    transition: all 0s;
+}
+
+.carousel-cell {
+    width: 86%;
+    height: 200px;
+    margin-right: 10px;
+    background: #8C8;
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+}
+
+/* cell number */
+.carousel-cell:before {
+    display: block;
+    text-align: center;
+    content: counter(carousel-cell);
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+}
+
+
+
+
+
+
+
 
 
 
@@ -844,6 +980,10 @@ form>div {
     #herramientas {
         height: 550px;
         padding: 70px 30px 100px 30px;
+    }
+    .contenidov {
+        padding: 70px 30px 100px 30px;
+        font-size: 90%;
     }
 
     .cell {

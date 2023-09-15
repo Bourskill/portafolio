@@ -1,0 +1,120 @@
+[
+    {
+        "id": 1,
+        "titulo": "MR TOSTON",
+        "categoria": "REDISEÑO DE LOGO",
+        "descripcion": "El restaurante, especializado en tostadas de plátano fritas, se enfrentó al desafío de renovar su identidad visual. El logo anterior, que incorporaba elementos colombianos tradicionales como el sombrero vueltiao y la bandera, no cumplía con los estándares de diseño. Durante el proceso de rediseño, se superaron varios obstáculos:",
+        "link": "Enlace 1",
+        "lista_de_logros": [
+            "Incorporación de la Identidad Afro: Reemplazar el sombrero vueltiao por un afro fue esencial para representar auténticamente a los dueños del restaurante y su herencia cultural.",
+            "Vectorización del Tostón: La transformación de una imagen fotográfica en un diseño vectorizado del tostón aseguró la adaptabilidad del logo en diversas aplicaciones.",
+            "Sustitución del Bigote por una Sonrisa: Cambiar el bigote por una sonrisa agregó una dimensión amigable y juvenil al diseño, conectando mejor con el público objetivo.",
+            "Elección de una Tipografía Juvenil: La selección de una tipografía más juvenil contribuyó a transmitir la energía y la frescura del negocio.",
+            "Eliminación de la Bandera: La eliminación de la bandera colombiana simplificó el diseño, logrando un aspecto más limpio y minimalista."
+        ],
+        "portada": "img/proyectos/mrtoston/portada_mrtoston.png",
+        "fotos_procesos": {
+            "foto1": "img/proyectos/mrtoston/recurso1.png",
+            "foto2": "img/proyectos/mrtoston/recurso2.png",
+            "foto3": "img/proyectos/mrtoston/recurso3.png"
+        }
+    },
+    {
+        "id": 2,
+        "titulo": "!TECH",
+        "categoria": "DISEÑO DE LOGO",
+        "descripcion": "Diseñar el logo para !Tech representó un reto significativo en un mercado tecnológico donde los logos suelen caer en la monotonía. Inspirarse en trabajos existentes no era una opción, ya que se buscaba algo verdaderamente innovador y minimalista. Además, se cambió el nombre de 'InnovateTech' a '!Tech' para una identidad más concisa.",
+        "link": "https://www.behance.net/gallery/177420241/Tech-Logo-Branding-Identidad",
+        "lista_de_logros": [
+            "Innovación Visual: Crear una figura distintiva que representara la tecnología sin recurrir a elementos convencionales como circuitos o cables.",
+            "Minimismo y Memorabilidad: Diseñar una figura minimalista que fuera fácil de recordar y reconocer, a pesar de la simplicidad.",
+            "Nueva Identidad: Cambiar el nombre a '!Tech' y lograr que esta identidad fuera coherente con el logo.",
+            "Paleta de Colores Atractiva: Seleccionar una paleta de colores fresca y atractiva que reflejara la esencia de la tecnología moderna."
+        ],
+        "portada": "img/proyectos/itech/portada_itech.png",
+        "fotos_procesos": {
+            "foto1": "img/proyectos/itech/recurso1.png",
+            "foto2": "img/proyectos/itech/recurso2.png",
+            "foto3": "img/proyectos/itech/recurso3.png",
+            "foto4": "img/proyectos/itech/recurso4.png"
+        }
+    },
+    {
+        "id": 3,
+        "titulo": "PLANTARTIA",
+        "categoria": "MANUAL DE MARCA",
+        "descripcion": "El desafío de crear un manual de marca para 'Plantartia', un emprendimiento que fabrica macetas de cemento mediante la impresión 3D y moldes para reproducción masiva, implicó la selección de un nombre y logo acorde a la personalidad de la marca. La audiencia objetivo, predominantemente joven, se siente atraída por referencias de la cultura juvenil, como Pokémon y figuras de franquicias animadas reconocidas.",
+        "link": "https://www.behance.net/gallery/175543037/BRANDING-PLANTARTIA",
+        "lista_de_logros": [
+            "Selección de Nombre Relevante: Elegir el nombre 'Plantartia' que combina 'planta' y 'art' fue un desafío en sí mismo, pero resultó en una marca que transmite la esencia creativa y artística de las macetas.",
+            "Diseño de Logo Innovador: El logo de 'Plantartia' debía ser atractivo para el público joven. Se superó el reto al crear un diseño fresco y único que incorpora elementos de la cultura juvenil sin perder la esencia de las macetas.",
+            "Identidad Visual Coherente: Garantizar que el manual de marca reflejara de manera coherente la personalidad de la marca y su enfoque hacia la juventud.",
+            "Versatilidad de Diseño: Se logró un diseño versátil que puede aplicarse en diversos productos y plataformas, manteniendo su atractivo y consistencia visual."
+        ],
+        "portada": "img/proyectos/itech/portada_plantartia.png",
+        "fotos_procesos": {
+            "foto1": "img/proyectos/plantartia/recurso1.png",
+            "foto2": "img/proyectos/plantartia/recurso2.png",
+            "foto3": "img/proyectos/plantartia/recurso3.png"
+        }
+    },
+    {
+        "id": 4,
+        "titulo": "CLUB47",
+        "categoria": "MANUAL DE MARCA",
+        "descripcion": "El desafío de crear un manual de marca para 'Club47', un emprendimiento centrado en la salud y los suplementos alimenticios, implicó la selección de un nombre y un logotipo que reflejaran la esencia del club. La decisión del nombre, 'Club47', se basó en la simplicidad y la memorabilidad, mientras que el tipo de logo elegido fue un logotipo que jugara con las letras, adelgazando ligeramente la frase 'club47' para añadir dinamismo y frescura. Además, se optó por una tipografía de palo seco para lograr un diseño minimalista y moderno.",
+        "link": "https://www.behance.net/gallery/155727995/BRANDING-CLUB47?tracking_source=search_projects|club47",
+        "lista_de_logros": [
+            "Sencillez y Memorabilidad del Nombre: Aunque la elección del nombre 'Club47' fue simple y personal, se logró una decisión que resulta altamente memorable y se relaciona con el enfoque en la salud.",
+            "Diseño Dinámico y Fresco: El logotipo que adelgaza ligeramente las letras de 'club47' aporta dinamismo y frescura al diseño, atrayendo a la audiencia interesada en la salud y el bienestar.",
+            "Minimalismo y Modernismo: La elección de una tipografía de palo seco contribuyó a la creación de una identidad visual minimalista y moderna que se alinea con las tendencias actuales en el campo de la salud."
+        ],
+        "portada": "img/proyectos/itech/portada_club47.png",
+        "fotos_procesos": {
+            "foto1": "img/proyectos/club47/recurso1.png",
+            "foto2": "img/proyectos/club47/recurso2.png",
+            "foto3": "img/proyectos/club47/recurso3.png",
+            "foto4": "img/proyectos/club47/recurso4.png"
+        }
+    },
+    {
+        "id": 5,
+        "titulo": "SLIDER PERSONALIZADO",
+        "categoria": "DISEÑO WEB",
+        "descripcion": "En este proyecto de diseño web, se creó un sitio que se centra exclusivamente en un slider de imágenes personalizado utilizando la librería Flickity. Este slider se destaca por dos características distintivas: la reducción gradual de la opacidad de las imágenes a medida que se desplazan fuera de la pantalla y el efecto parallax que permite que el contenedor se mueva mientras la imagen se mantiene en la ubicación central de la pantalla. Estas cualidades únicas presentaron un desafío significativo, ya que no existen librerías preconfiguradas que ofrezcan estas características de manera sencilla.",
+        "link": "https://bourskill.github.io/slider_personalizado/",
+        "lista_de_logros": [
+            "Opacidad Gradual: Implementar la reducción gradual de la opacidad de las imágenes a medida que salen de la pantalla requirió un conocimiento sólido de HTML, CSS y JavaScript. Se superó este reto a través de la investigación y la adaptación de técnicas avanzadas.",
+            "Efecto Parallax: Lograr el efecto parallax en el que el contenedor se desplaza mientras la imagen permanece en la ubicación central implicó una manipulación precisa del DOM y eventos de desplazamiento. Se superó este reto gracias a la experimentación y la adaptación de soluciones personalizadas.",
+            "Responsividad y Resistencia a Errores de Tamaño de Ventana: Se garantizó que el diseño web fuera responsivo y resistente a cambios bruscos en el tamaño de la ventana del navegador, evitando bugs relacionados con el mal uso del tamaño de la ventana."
+        ],
+        "portada": "img/proyectos/slider/slider_personalizado.png",
+        "fotos_procesos": {
+            "foto1": "img/proyectos/slider/captura.png",
+            "foto2": "img/proyectos/slider/captura1.png",
+            "foto3": "img/proyectos/slider/captura2.png"
+        }
+    },
+    {
+        "id": 6,
+        "titulo": "TIENDA POR WHATSAPP",
+        "categoria": "DISEÑO WEB",
+        "descripcion": "Este proyecto web aborda diversos aspectos clásicos de una tienda en línea, ofreciendo una experiencia similar a Pinterest en la página de inicio con una serie de productos. Cuando se selecciona un producto, se muestra un slider con diferentes ángulos del artículo, junto con opciones para ver su descripción y agregarlo al carrito. Además, se implementó un carrito de compras que permite personalizar la cantidad de productos. Al finalizar la compra, se genera un mensaje que recopila los datos del cliente y su compra, lo que facilita la comunicación con el responsable de la tienda a través de WhatsApp.",
+        "link": "https://bourskill.github.io/tienda_whatsapp/",
+        "lista_de_logros": [
+            "Diseño Estético Similar a Pinterest: La apariencia similar a Pinterest en la página de inicio se logró mediante el uso de la librería Masonry, lo que brinda una experiencia visual atractiva y alineada con las tendencias actuales.",
+            "Slider de Productos con Vistas Múltiples: Se implementó un slider que muestra diferentes ángulos de los productos, lo que requería una gestión precisa de imágenes y transiciones fluidas.",
+            "Gestión de Carrito de Compras Personalizable: Se desarrolló un carrito de compras que permite ajustar la cantidad de productos en tiempo real, brindando flexibilidad al usuario durante la compra.",
+            "Generación de Mensaje de WhatsApp Personalizado: Se creó un mensaje que recopila los datos del cliente y su compra, facilitando la comunicación con el responsable de la tienda para finalizar la venta.",
+            "Persistencia de Datos del Carrito: Los productos en el carrito se mantienen incluso después de actualizar la página, lo que mejora la experiencia del usuario al no perder los productos seleccionados.",
+            "Diseño Responsivo: El sitio web se diseñó de manera responsiva, lo que garantiza que se adapte adecuadamente a diferentes tamaños de pantalla y dispositivos.",
+            "Base de Datos Firebase: Las imágenes se almacenan en la base de datos de Google Firebase y se llaman a través de su API, lo que asegura una gestión eficiente de los recursos y la información de productos."
+        ],
+        "portada": "img/proyectos/tienda/portada_tienda.png",
+        "fotos_procesos": {
+            "foto1": "img/proyectos/tienda/captura.png",
+            "foto2": "img/proyectos/tienda/captura0.png",
+            "foto3": "img/proyectos/tienda/captura1.png"
+        }
+    }
+]

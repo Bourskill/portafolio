@@ -7,6 +7,12 @@ mensajeTextarea.addEventListener("input", function () {
 
 
 
+
+
+
+
+
+
 // Desplegue de menu flotante
 const barraNav = document.querySelector("#barranav");
 const closeNav = barraNav.querySelector(".navclose");
@@ -39,6 +45,14 @@ closeNav.addEventListener("click", () => {
 
 
 
+
+
+
+
+
+
+
+
 // animacion header scroll
 window.addEventListener("scroll", () => {
     menuFlotante.classList.toggle("scrollhr", window.scrollY > 0);
@@ -47,7 +61,14 @@ window.addEventListener("scroll", () => {
 
 
 
-//animacion nav btns
+
+
+
+
+
+
+//ANIMACION NSV BTNS
+
 // Esta función maneja lo que sucede cuando haces clic en los botones de navegación
 function handleButtonClick(boton) {
     // Primero, obtenemos todos los botones de navegación
