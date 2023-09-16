@@ -68,26 +68,35 @@ window.addEventListener("scroll", () => {
 
 
 //ANIMACION NSV BTNS
+const botones = document.querySelectorAll('#barranav button');
+let isScrolling = false; // Variable para controlar el estado del scroll
+let isAutoScrollEnabled = true; // Variable para controlar la funcionalidad automática de scroll
 
-// Esta función maneja lo que sucede cuando haces clic en los botones de navegación
+// Función para deshabilitar la funcionalidad automática de scroll
+function deshabilitarAutoScroll() {
+    isAutoScrollEnabled = false;
+}
+
+// Función para habilitar la funcionalidad automática de scroll
+function habilitarAutoScroll() {
+    isAutoScrollEnabled = true;
+    // Llamamos a la función para asegurarnos de que se marque el botón correcto al cargar la página
+    detectarArticuloVisible();
+}
+
+// Función para manejar lo que sucede cuando haces clic en los botones de navegación
 function handleButtonClick(boton) {
-    // Primero, obtenemos todos los botones de navegación
-    const botones = document.querySelectorAll('#barranav button');
-
-    // Luego, quitamos la clase "btnfocus" de todos los botones
+    // Quitamos la clase "btnfocus" de todos los botones
     botones.forEach((btn) => btn.classList.remove('btnfocus'));
 
-    // Finalmente, añadimos la clase "btnfocus" al botón en el que hiciste clic
+    // Añadimos la clase "btnfocus" al botón en el que hiciste clic
     boton.classList.add('btnfocus');
 }
 
-// Usamos esta variable para saber si la página está siendo desplazada o no
-let isScrolling = false;
-
-// Ahora, esta función detecta qué artículo se está viendo en la pantalla
+// Función para detectar qué artículo se está viendo en la pantalla
 function detectarArticuloVisible() {
-    // Verificamos si la página no se está desplazando en ese momento
-    if (!isScrolling) {
+    // Verificamos si la página no se está desplazando en ese momento y la funcionalidad automática está habilitada
+    if (!isScrolling && isAutoScrollEnabled) {
         // Obtenemos todos los artículos y botones de navegación
         const articulos = document.querySelectorAll('article');
         const botones = document.querySelectorAll('#barranav button');
@@ -118,12 +127,6 @@ function detectarArticuloVisible() {
     }
 }
 
-// Asociamos la función de manejo de clics a cada botón
-const botones = document.querySelectorAll('#barranav button');
-botones.forEach((btn) => {
-    btn.addEventListener('click', () => handleButtonClick(btn));
-});
-
 // Detectamos si la página está siendo desplazada
 window.addEventListener('scroll', () => {
     isScrolling = true;
@@ -133,11 +136,27 @@ window.addEventListener('scroll', () => {
     window.scrollTimer = setTimeout(function () {
         isScrolling = false; // Cuando termina el desplazamiento, marcamos que no se está desplazando
         detectarArticuloVisible(); // Llamamos a la función para actualizar la clase del botón
-    }, 50); // Redujimos el tiempo de espera a 100 milisegundos (puedes cambiar esto)
+    }, 50); // Redujimos el tiempo de espera a 50 milisegundos (puedes cambiar esto)
+
+    // Llamamos a la función de detección de artículo visible si la funcionalidad automática está habilitada
+    if (isAutoScrollEnabled) {
+        detectarArticuloVisible();
+    }
+});
+
+// Asociamos la función de manejo de clics a cada botón
+botones.forEach((btn) => {
+    btn.addEventListener('click', () => handleButtonClick(btn));
 });
 
 // Llamamos a la función para asegurarnos de que se marque el botón correcto al cargar la página
 detectarArticuloVisible();
+
+
+
+
+
+
 
 
 
@@ -175,6 +194,8 @@ function mostrarLoader() {
 }
 
 function ocultarLoader() {
+    botones.forEach((btn) => btn.classList.remove('btnfocus'));
+    deshabilitarAutoScroll()
     loader.style.opacity = '0';
     setTimeout(() => {
         loader.style.display = 'none';
@@ -241,8 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 const flickity = new Flickity(carouselContainer, {
-                    cellAlign: 'left',
-                    contain: true, 
+                    draggable: "true"
                 });
 
                 for (const key in fotosProcesos) {

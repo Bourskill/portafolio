@@ -832,8 +832,6 @@ form>div {
     border-radius: 20px;
     background-color: white;
     color: rgb(82, 82, 82);
-
-    border: solid 2px white;
     overflow: hidden;
 
     position: relative;
@@ -919,7 +917,6 @@ form>div {
 .carousel {
     background: #FAFAFA;
     transition: all 0s;
-    height: fit-content;
 }
 
 .carousel * {
@@ -927,9 +924,8 @@ form>div {
 }
 
 .carousel-cell {
-    width: 86%;
+    width: 90%;
     height: 200px;
-    margin-right: 10px;
     background: rgb(218, 218, 218);
     border-radius: 10px;
     overflow: hidden;
