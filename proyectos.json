@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "titulo": "MR TOSTON",
+        "titulo": "MR. TOSTON",
         "categoria": "REDISEÑO DE LOGO",
         "descripcion": "El restaurante, especializado en tostadas de plátano fritas, se enfrentó al desafío de renovar su identidad visual. El logo anterior, que incorporaba elementos colombianos tradicionales como el sombrero vueltiao y la bandera, no cumplía con los estándares de diseño. Durante el proceso de rediseño, se superaron varios obstáculos:",
         "link": "Enlace 1",
@@ -51,10 +51,10 @@
             "Identidad Visual Coherente: Garantizar que el manual de marca reflejara de manera coherente la personalidad de la marca y su enfoque hacia la juventud.",
             "Versatilidad de Diseño: Se logró un diseño versátil que puede aplicarse en diversos productos y plataformas, manteniendo su atractivo y consistencia visual."
         ],
-        "portada": "img/proyectos/itech/portada_plantartia.png",
+        "portada": "img/proyectos/plantartia/portada_plantartia.png",
         "fotos_procesos": {
             "foto1": "img/proyectos/plantartia/recurso1.png",
-            "foto2": "img/proyectos/plantartia/recurso2.png",
+            "foto2": "img/proyectos/plantartia/recurso2.jpg",
             "foto3": "img/proyectos/plantartia/recurso3.png"
         }
     },
@@ -69,12 +69,11 @@
             "Diseño Dinámico y Fresco: El logotipo que adelgaza ligeramente las letras de 'club47' aporta dinamismo y frescura al diseño, atrayendo a la audiencia interesada en la salud y el bienestar.",
             "Minimalismo y Modernismo: La elección de una tipografía de palo seco contribuyó a la creación de una identidad visual minimalista y moderna que se alinea con las tendencias actuales en el campo de la salud."
         ],
-        "portada": "img/proyectos/itech/portada_club47.png",
+        "portada": "img/proyectos/club47/portada_club47.png",
         "fotos_procesos": {
             "foto1": "img/proyectos/club47/recurso1.png",
             "foto2": "img/proyectos/club47/recurso2.png",
-            "foto3": "img/proyectos/club47/recurso3.png",
-            "foto4": "img/proyectos/club47/recurso4.png"
+            "foto3": "img/proyectos/club47/recurso3.png"
         }
     },
     {

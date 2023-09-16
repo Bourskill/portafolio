@@ -130,6 +130,9 @@ nav button:hover {
     max-width: 1000px;
     transition: 1s;
     margin-bottom: 100px;
+    position: relative;
+    opacity: 1;
+    overflow: hidden;
 }
 
 article>h1 {
@@ -826,7 +829,6 @@ form>div {
 #view {
     width: 100%;
 
-    margin-top: 40px;
     border-radius: 20px;
     background-color: white;
     color: rgb(82, 82, 82);
@@ -854,9 +856,11 @@ form>div {
     margin-bottom: 40px;
     font-weight: 400;
 }
+
 .contenidov ul {
     margin-bottom: 60px;
 }
+
 .contenidov li {
     margin-bottom: 20px;
 }
@@ -869,23 +873,23 @@ form>div {
 }
 
 
-.tit button span{
+.tit button span {
     margin-right: 10px;
 }
 
-#view> button span{
+#view>button span {
     margin-left: 10px;
 }
 
 .tit button,
-#view> button {
+#view>button {
     background-color: var(--azul1);
     border-radius: 10px;
     padding: 10px 20px;
     color: white;
 }
 
-#view> button {
+#view>button {
     position: absolute;
     top: 15px;
     left: 15px;
@@ -915,6 +919,7 @@ form>div {
 .carousel {
     background: #FAFAFA;
     transition: all 0s;
+    height: fit-content;
 }
 
 .carousel * {
@@ -925,20 +930,47 @@ form>div {
     width: 86%;
     height: 200px;
     margin-right: 10px;
-    background: #8C8;
-    border-radius: 5px;
-    counter-increment: carousel-cell;
+    background: rgb(218, 218, 218);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* cell number */
-.carousel-cell:before {
-    display: block;
-    text-align: center;
-    content: counter(carousel-cell);
-    line-height: 200px;
-    font-size: 80px;
-    color: white;
+.carousel-cell img {
+    object-fit: contain;
 }
+
+
+
+
+
+.lightloader {
+    width: 100%;
+    height: calc(100vh - 40px);
+    background-color: white;
+    border-radius: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0; /* Establece la opacidad inicial en 0 */
+    display: none; /* Oculta el loader inicialmente */
+
+    transition: opacity 0.5s; /* Ajusta la transición para que sea más suave */
+    z-index: 99999;
+}
+
+
+
+
+
 
 
 
@@ -981,6 +1013,7 @@ form>div {
         height: 550px;
         padding: 70px 30px 100px 30px;
     }
+
     .contenidov {
         padding: 70px 30px 100px 30px;
         font-size: 90%;
@@ -1061,5 +1094,124 @@ form>div {
         width: 95%;
         left: 50%;
         transform: translateX(-50%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ldio-brwwfvclygm>div {
+    transform: translate(0px, -15px)
+}
+
+.ldio-brwwfvclygm>div>div {
+    animation: ldio-brwwfvclygm-r 1s linear infinite;
+    transform-origin: 100px 100px;
+}
+
+.ldio-brwwfvclygm>div>div>div {
+    position: absolute;
+    transform: translate(100px, 82px);
+}
+
+.ldio-brwwfvclygm>div>div>div>div {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--azul1);
+    animation: ldio-brwwfvclygm-s 1s linear infinite;
+}
+
+.ldio-brwwfvclygm>div>div:last-child {
+    animation-delay: -0.5s;
+}
+
+.ldio-brwwfvclygm>div>div:last-child>div>div {
+    animation-delay: -0.5s;
+    background: var(--grisclarito);
+}
+
+.loadingio-spinner-interwind-f28t01gmiqk {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.ldio-brwwfvclygm {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+    /* see note above */
+}
+
+.ldio-brwwfvclygm div {
+    box-sizing: content-box;
+}
+
+
+
+
+@keyframes ldio-brwwfvclygm-r {
+
+    0%,
+    100% {
+        animation-timing-function: cubic-bezier(0.2 0 0.8 0.8)
+    }
+
+    50% {
+        animation-timing-function: cubic-bezier(0.2 0.2 0.8 1)
+    }
+
+    0% {
+        transform: rotate(0deg)
+    }
+
+    50% {
+        transform: rotate(180deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes ldio-brwwfvclygm-s {
+
+    0%,
+    100% {
+        animation-timing-function: cubic-bezier(0.2 0 0.8 0.8)
+    }
+
+    50% {
+        animation-timing-function: cubic-bezier(0.2 0.2 0.8 1)
+    }
+
+    0% {
+        transform: translate(-30px, -30px) scale(0)
+    }
+
+    50% {
+        transform: translate(-30px, -30px) scale(1)
+    }
+
+    100% {
+        transform: translate(-30px, -30px) scale(0)
     }
 }

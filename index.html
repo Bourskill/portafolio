@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum </title>
 
-    <!-- Flickity  -->
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
+    
+
+    
+
 
     <!-- Font-awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -72,9 +75,6 @@
         </button>
         <button onclick="window.location.href='#contacto';">
             <i class="fa-solid fa-address-card"></i><span>Contacto</span>
-        </button>
-        <button onclick="window.location.href='#view';">
-            <i class="fa-solid fa-address-card"></i><span>view</span>
         </button>
     </nav>
 
@@ -261,27 +261,27 @@
         <article id="proyectos">
             <h1>Proyectos</h1>
             <div class="proyects">
-                <button class="pro">
+                <button class="pro" data-id="1">
                     <img src="img/proyectos/mrtoston/recurso3.png" alt="">
                     <h3>REDISEÑO DE LOGO</h3>
                 </button>
-                <button class="pro">
+                <button class="pro" data-id="2">
                     <img src="img/proyectos/itech/Recurso4.png" alt="">
                     <h3>CREACION DE LOGO</h3>
                 </button>
-                <button class="pro">
+                <button class="pro" data-id="3">
                     <img src="img/proyectos/plantartia/Recurso3.png" alt="">
                     <h3>MANUAL DE MARCA</h3>
                 </button>
-                <button class="pro">
+                <button class="pro" data-id="4">
                     <img src="img/proyectos/club47/Recurso3.png" alt="">
                     <h3>MANUAL DE MARCA</h3>
                 </button>
-                <button class="pro">
+                <button class="pro" data-id="5">
                     <img src="img/proyectos/slider/images-solid.svg" alt="">
                     <h3>SLIDER PERSONALIZADO - WEB</h3>
                 </button>
-                <button class="pro">
+                <button class="pro" data-id="6">
                     <img src="img/proyectos/tienda/shop-solid.svg" alt="">
                     <h3>TIENDA WHATSAPP - WEB</h3>
                 </button>
@@ -293,19 +293,23 @@
         <article id="herramientas">
             <h1>Herramientas</h1>
             <div class="contherr">
-                <button onclick="window.open('https://www.adobe.com/es/products/illustrator.html', '_blank'); "class="herr">
+                <button onclick="window.open('https://www.adobe.com/es/products/illustrator.html', '_blank'); "
+                    class="herr">
                     <img src="img/icons/illustrator_6422688.svg" alt="Logo de illustrator">
                 </button>
                 <button onclick="window.open('https://code.visualstudio.com', '_blank');" class="herr">
                     <img src="img/icons/vscode.svg" alt="logo de vscode">
                 </button>
-                <button onclick="window.open('https://www.adobe.com/es/products/photoshop.html', '_blank'); "class="herr">
+                <button onclick="window.open('https://www.adobe.com/es/products/photoshop.html', '_blank'); "
+                    class="herr">
                     <img src="img/icons/photoshop_6422739.svg" alt="Logo de photoshop">
                 </button>
-                <button onclick="window.open('https://www.adobe.com/es/products/aftereffects.html', '_blank'); "class="herr">
+                <button onclick="window.open('https://www.adobe.com/es/products/aftereffects.html', '_blank'); "
+                    class="herr">
                     <img src="img/icons/after-effects_6422654.svg" alt="Logo de after effects">
                 </button>
-                <button onclick="window.open('https://www.adobe.com/es/products/premiere.html', '_blank');" class="herr">
+                <button onclick="window.open('https://www.adobe.com/es/products/premiere.html', '_blank');"
+                    class="herr">
                     <img src="img/icons/premiere_6422745.svg" alt="Logo de premiere pro">
                 </button>
             </div>
@@ -363,55 +367,58 @@
                 </div>
         </article>
 
-        <article id="view">
-            <img src="img/gift-habeshaw-UxujkVMyY_0-unsplash.jpg" alt="">
+        <div class="lightloader">
+            <div class="loadingio-spinner-interwind-f28t01gmiqk">
+                <div class="ldio-brwwfvclygm">
+                    <div>
+                        <div>
+                            <div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <template id="viewproyect">
+        <div id="view">
+            <img src="" alt="">
             <div class="contenidov">
                 <div class="tit">
                     <div class="title">
-                        <h1>MR. TOSTON</h1>
-                        <span>REDISEÑO DE LOGO</span>
+                        <h1>NOMBRE</h1>
+                        <span>CATEGORIA</span>
                     </div>
-                    <button>
+                    <button onclick="window.open('', '_blank');">
                         <span>Visualizar proyect</span>
                         <i class="fa-solid fa-up-right-from-square"></i>
                     </button>
                 </div>
-
-                <p>El restaurante, especializado en tostadas de plátano fritas, se enfrentó al desafío de renovar su
-                    identidad visual. El logo anterior, que incorporaba elementos colombianos tradicionales como el
-                    sombrero vueltiao y la bandera, no cumplía con los estándares de diseño. Durante el proceso de
-                    rediseño, se superaron varios obstáculos:</p>
-
+                <p></p>
                 <ul>
-                    <li><b>Incorporación de la Identidad Afro:</b> Reemplazar el sombrero vueltiao por un afro fue esencial para representar auténticamente a los dueños del restaurante y su herencia cultural.</li>
-                    <li><b>Vectorización del Tostón:</b> La transformación de una imagen fotográfica en un diseño vectorizado del tostón aseguró la adaptabilidad del logo en diversas aplicaciones.</li>
-                    <li><b>Sustitución del Bigote por una Sonrisa:</b> Cambiar el bigote por una sonrisa agregó una dimensión amigable y juvenil al diseño, conectando mejor con el público objetivo.</li>
-                    <li><b>Elección de una Tipografía Juvenil:</b> La selección de una tipografía más juvenil contribuyó a transmitir la energía y la frescura del negocio.</li>
-                    <li><b>Eliminación de la Bandera:</b> La eliminación de la bandera colombiana simplificó el diseño, logrando un aspecto más limpio y minimalista.</li>
+                    <li></li>
                 </ul>
-
                 <div class="procesos">
                     <h2>Procesos</h2>
-
-                    <!-- Flickity HTML init -->
-                    <div class="carousel" data-flickity='{ "draggable": 1 }'>
-                        <div class="carousel-cell"></div>
-                        <div class="carousel-cell"></div>
-                        <div class="carousel-cell"></div>
-                        <div class="carousel-cell"></div>
+                    <div class="carousel">
                         <div class="carousel-cell"></div>
                     </div>
                 </div>
             </div>
-
             <button>
                 <i class="fa-solid fa-right-to-bracket fa-rotate-180"></i>
                 <span>volver</span>
             </button>
-
-
-        </article>
-    </main>
+        </div>
+    </template>
 
     <script src="app.js"></script>
 

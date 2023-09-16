@@ -73,10 +73,10 @@ window.addEventListener("scroll", () => {
 function handleButtonClick(boton) {
     // Primero, obtenemos todos los botones de navegación
     const botones = document.querySelectorAll('#barranav button');
-    
+
     // Luego, quitamos la clase "btnfocus" de todos los botones
     botones.forEach((btn) => btn.classList.remove('btnfocus'));
-    
+
     // Finalmente, añadimos la clase "btnfocus" al botón en el que hiciste clic
     boton.classList.add('btnfocus');
 }
@@ -91,7 +91,7 @@ function detectarArticuloVisible() {
         // Obtenemos todos los artículos y botones de navegación
         const articulos = document.querySelectorAll('article');
         const botones = document.querySelectorAll('#barranav button');
-        
+
         // Inicializamos una variable para rastrear el artículo visible
         let articuloVisible = null;
 
@@ -99,10 +99,10 @@ function detectarArticuloVisible() {
         articulos.forEach((articulo, index) => {
             // Obtenemos su posición en la pantalla
             const rect = articulo.getBoundingClientRect();
-            
+
             // Ajustamos un valor de visibilidad en función de la altura del artículo
             const umbral = rect.height * 0.6; // Puedes cambiar esto según quieras
-            
+
             // Si el artículo está en gran parte visible en la pantalla
             if (rect.top >= -umbral && rect.bottom <= window.innerHeight + umbral) {
                 // Lo marcamos como el artículo visible
@@ -127,7 +127,7 @@ botones.forEach((btn) => {
 // Detectamos si la página está siendo desplazada
 window.addEventListener('scroll', () => {
     isScrolling = true;
-    
+
     // Limpiamos el temporizador anterior (si existe) y configuramos uno nuevo
     clearTimeout(window.scrollTimer);
     window.scrollTimer = setTimeout(function () {
@@ -140,4 +140,137 @@ window.addEventListener('scroll', () => {
 detectarArticuloVisible();
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const loader = document.querySelector('.lightloader');
+
+function mostrarLoader() {
+    window.scrollTo(0, 0);
+    document.body.style.overflow = 'hidden';
+    loader.style.display = 'flex';
+    setTimeout(() => {
+        loader.style.opacity = '1';
+    }, 0);
+}
+
+function ocultarLoader() {
+    loader.style.opacity = '0';
+    setTimeout(() => {
+        loader.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }, 500);
+}
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    let proyectos;
+    fetch('proyectos.json')
+        .then(response => response.json())
+        .then(data => {
+            proyectos = data;
+        })
+        .catch(error => console.error('Error al cargar proyectos.json:', error));
+
+
+    const botonesProyectos = document.querySelectorAll('.pro');
+
+
+    function mostrarProyecto(id) {
+        const template = document.getElementById('viewproyect');
+        const proyecto = proyectos.find(item => item.id === id);
+
+        if (proyecto) {
+            mostrarLoader();
+
+
+            const viewContainer = document.querySelector('main');
+            const viewContainerArticles = viewContainer.querySelectorAll("article");
+            viewContainer.style.height = "calc(100vh - 40px)";
+            viewContainerArticles.forEach(element => {
+                element.style.opacity = "0";
+                element.style.display = "none";
+            });
+           
+
+            setTimeout(() => {
+                viewContainer.style.height = "";
+
+                template.content.querySelector('img').src = proyecto.portada;
+                template.content.querySelector('h1').textContent = proyecto.titulo;
+                template.content.querySelector('span').textContent = proyecto.categoria;
+                template.content.querySelector('p').textContent = proyecto.descripcion;
+                const listaLogros = template.content.querySelector('ul');
+                listaLogros.innerHTML = '';
+                proyecto.lista_de_logros.forEach(logro => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = logro;
+                    listaLogros.appendChild(listItem);
+                });
+
+                const clone = document.importNode(template.content, true);
+                viewContainer.appendChild(clone);
+
+                const fotosProcesos = proyecto.fotos_procesos;
+                const carouselContainer = document.querySelector('.carousel');
+                carouselContainer.innerHTML = '';
+
+
+                const flickity = new Flickity(carouselContainer, {
+                    cellAlign: 'left',
+                    contain: true, 
+                });
+
+                for (const key in fotosProcesos) {
+                    if (fotosProcesos.hasOwnProperty(key)) {
+                        const imgUrl = fotosProcesos[key];
+                        const cell = document.createElement('div');
+                        cell.className = 'carousel-cell';
+                        const img = document.createElement('img');
+                        img.src = imgUrl;
+                        cell.appendChild(img);
+                        flickity.append(cell);
+                    }
+                }
+
+
+                setTimeout(() => {
+                    ocultarLoader();
+                }, 1000);
+            }, 500);
+        }
+    }
+
+
+    botonesProyectos.forEach(botonesProyecto => {
+        botonesProyecto.addEventListener('click', function () {
+            const idProyecto = this.getAttribute('data-id');
+            mostrarProyecto(parseInt(idProyecto));
+        });
+    });
+});
 
