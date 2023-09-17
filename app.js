@@ -210,87 +210,101 @@ function ocultarLoader() {
 
 document.addEventListener("DOMContentLoaded", function () {
     let proyectos;
-    fetch('proyectos.json')
-        .then(response => response.json())
-        .then(data => {
-            proyectos = data;
-        })
-        .catch(error => console.error('Error al cargar proyectos.json:', error));
 
+    // Función para cargar proyectos desde JSON
+    async function cargarProyectos() {
+        try {
+            const response = await fetch('proyectos.json');
+            proyectos = await response.json();
+        } catch (error) {
+            console.error('Error al cargar proyectos.json:', error);
+        }
+    }
 
-    const botonesProyectos = document.querySelectorAll('.pro');
-
-
+    // Función para mostrar un proyecto
     function mostrarProyecto(id) {
         const template = document.getElementById('viewproyect');
         const proyecto = proyectos.find(item => item.id === id);
 
-        if (proyecto) {
-            mostrarLoader();
+        if (!proyecto) return;
+
+        mostrarLoader();
+
+        const viewContainer = document.querySelector('main');
+        const viewContainerArticles = viewContainer.querySelectorAll("article");
+        viewContainer.style.height = "calc(100vh - 40px)";
+        viewContainerArticles.forEach(element => {
+            element.style.opacity = "0";
+            element.style.display = "none";
+        });
+
+        setTimeout(() => {
+            viewContainer.style.height = "";
+
+            // Llenar el contenido del proyecto
+            const { portada, titulo, categoria, descripcion, lista_de_logros, fotos_procesos, link } = proyecto;
+            template.content.querySelector('img').src = portada;
+            template.content.querySelector('h1').textContent = titulo;
+            template.content.querySelector('span').textContent = categoria;
+            template.content.querySelector('p').textContent = descripcion;
 
 
-            const viewContainer = document.querySelector('main');
-            const viewContainerArticles = viewContainer.querySelectorAll("article");
-            viewContainer.style.height = "calc(100vh - 40px)";
-            viewContainerArticles.forEach(element => {
-                element.style.opacity = "0";
-                element.style.display = "none";
+            const listaLogros = template.content.querySelector('ul');
+            listaLogros.innerHTML = '';
+            lista_de_logros.forEach(logro => {
+                const listItem = document.createElement('li');
+                listItem.textContent = logro;
+                listaLogros.appendChild(listItem);
             });
-           
+
+
+            const clone = document.importNode(template.content, true);
+            viewContainer.appendChild(clone);
+
+
+
+            // Crear el carrusel de fotos
+            const carouselContainer = document.querySelector('.carousel');
+            carouselContainer.innerHTML = '';
+            const flickity = new Flickity(carouselContainer, { draggable: "true" });
+
+            // Usar forEach en lugar de un bucle for
+            Object.values(fotos_procesos).forEach(imgUrl => {
+                const cell = document.createElement('div');
+                cell.className = 'carousel-cell';
+                const img = document.createElement('img');
+                img.src = imgUrl;
+                cell.appendChild(img);
+                flickity.append(cell);
+            });
+
+            // Obtener el botón "Visualizar proyect"
+            const visualizarButton = document.getElementById('Visualizar');
+
+            // Agregar un evento click al botón para abrir el enlace
+            visualizarButton.addEventListener('click', function () {
+                if (link) {
+                    window.open(link, '_blank');
+                }
+            });
 
             setTimeout(() => {
-                viewContainer.style.height = "";
-
-                template.content.querySelector('img').src = proyecto.portada;
-                template.content.querySelector('h1').textContent = proyecto.titulo;
-                template.content.querySelector('span').textContent = proyecto.categoria;
-                template.content.querySelector('p').textContent = proyecto.descripcion;
-                const listaLogros = template.content.querySelector('ul');
-                listaLogros.innerHTML = '';
-                proyecto.lista_de_logros.forEach(logro => {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = logro;
-                    listaLogros.appendChild(listItem);
-                });
-
-                const clone = document.importNode(template.content, true);
-                viewContainer.appendChild(clone);
-
-                const fotosProcesos = proyecto.fotos_procesos;
-                const carouselContainer = document.querySelector('.carousel');
-                carouselContainer.innerHTML = '';
-
-
-                const flickity = new Flickity(carouselContainer, {
-                    draggable: "true"
-                });
-
-                for (const key in fotosProcesos) {
-                    if (fotosProcesos.hasOwnProperty(key)) {
-                        const imgUrl = fotosProcesos[key];
-                        const cell = document.createElement('div');
-                        cell.className = 'carousel-cell';
-                        const img = document.createElement('img');
-                        img.src = imgUrl;
-                        cell.appendChild(img);
-                        flickity.append(cell);
-                    }
-                }
-
-
-                setTimeout(() => {
-                    ocultarLoader();
-                }, 1000);
-            }, 500);
-        }
+                ocultarLoader();
+            }, 1000);
+        }, 500);
     }
 
-
-    botonesProyectos.forEach(botonesProyecto => {
-        botonesProyecto.addEventListener('click', function () {
+    // Agregar eventos click a los botones de proyectos
+    const botonesProyectos = document.querySelectorAll('.pro');
+    botonesProyectos.forEach(boton => {
+        boton.addEventListener('click', function () {
             const idProyecto = this.getAttribute('data-id');
             mostrarProyecto(parseInt(idProyecto));
         });
     });
+
+    // Cargar proyectos al iniciar la página
+    cargarProyectos();
 });
+
 
