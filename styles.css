@@ -611,7 +611,6 @@ article>h1:after {
 /* Estilos de la sección de herramientas */
 #herramientas {
     width: 100%;
-    height: 750px;
     padding: 70px 70px 120px 70px;
     margin-top: 40px;
     border-radius: 20px;
@@ -626,7 +625,8 @@ article>h1:after {
 }
 
 .contherr {
-    flex: 1;
+    width: 100%;
+    height: 400px;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(7, 1fr);
@@ -915,6 +915,7 @@ form>div {
 
 
 .carousel {
+    width: 100%;
     background: #FAFAFA;
     transition: all 0s;
 }
@@ -924,7 +925,7 @@ form>div {
 }
 
 .carousel-cell {
-    width: 90%;
+    width: 66%;
     height: 200px;
     background: rgb(218, 218, 218);
     border-radius: 10px;
@@ -956,10 +957,13 @@ form>div {
     justify-content: center;
     align-items: center;
 
-    opacity: 0; /* Establece la opacidad inicial en 0 */
-    display: none; /* Oculta el loader inicialmente */
+    opacity: 0;
+    /* Establece la opacidad inicial en 0 */
+    display: none;
+    /* Oculta el loader inicialmente */
 
-    transition: opacity 0.5s; /* Ajusta la transición para que sea más suave */
+    transition: opacity 0.5s;
+    /* Ajusta la transición para que sea más suave */
     z-index: 99999;
 }
 
@@ -1006,7 +1010,6 @@ form>div {
     }
 
     #herramientas {
-        height: 550px;
         padding: 70px 30px 100px 30px;
     }
 

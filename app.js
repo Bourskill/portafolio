@@ -161,27 +161,6 @@ detectarArticuloVisible();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const loader = document.querySelector('.lightloader');
 
 function mostrarLoader() {
@@ -203,11 +182,6 @@ function ocultarLoader() {
     }, 500);
 }
 
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     let proyectos;
 
@@ -228,6 +202,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!proyecto) return;
 
+        console.log('Mostrando proyecto:', proyecto);
+
         mostrarLoader();
 
         const viewContainer = document.querySelector('main');
@@ -243,32 +219,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Llenar el contenido del proyecto
             const { portada, titulo, categoria, descripcion, lista_de_logros, fotos_procesos, link } = proyecto;
-            template.content.querySelector('img').src = portada;
-            template.content.querySelector('h1').textContent = titulo;
-            template.content.querySelector('span').textContent = categoria;
-            template.content.querySelector('p').textContent = descripcion;
+            const view = template.content.querySelector('#view');
+            view.querySelector('img').src = portada;
+            view.querySelector('h1').textContent = titulo;
+            view.querySelector('span').textContent = categoria;
+            view.querySelector('p').textContent = descripcion;
 
-
-            const listaLogros = template.content.querySelector('ul');
+            const listaLogros = view.querySelector('ul');
             listaLogros.innerHTML = '';
             lista_de_logros.forEach(logro => {
                 const listItem = document.createElement('li');
-                listItem.textContent = logro;
+                const parts = logro.split(': ');
+                if (parts.length === 2) {
+                    const strong = document.createElement('strong');
+                    strong.textContent = parts[0];
+                    const textNode = document.createTextNode(`: ${parts[1]}`);
+                    listItem.appendChild(strong);
+                    listItem.appendChild(textNode);
+                } else {
+                    listItem.textContent = logro;
+                }
                 listaLogros.appendChild(listItem);
             });
 
-
             const clone = document.importNode(template.content, true);
             viewContainer.appendChild(clone);
-
-
 
             // Crear el carrusel de fotos
             const carouselContainer = document.querySelector('.carousel');
             carouselContainer.innerHTML = '';
             const flickity = new Flickity(carouselContainer, { draggable: "true" });
 
-            // Usar forEach en lugar de un bucle for
             Object.values(fotos_procesos).forEach(imgUrl => {
                 const cell = document.createElement('div');
                 cell.className = 'carousel-cell';
@@ -278,8 +259,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 flickity.append(cell);
             });
 
-            // Obtener el botón "Visualizar proyect"
-            const visualizarButton = document.getElementById('Visualizar');
+            // Obtener el botón "Visualizar proyecto"
+            const visualizarButton = view.querySelector('#Visualizar');
 
             // Agregar un evento click al botón para abrir el enlace
             visualizarButton.addEventListener('click', function () {
@@ -288,9 +269,35 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            setTimeout(() => {
-                ocultarLoader();
-            }, 1000);
+            ocultarLoader();
+
+            // Agregar evento click al botón "Volver" utilizando event delegation
+            document.addEventListener('click', function (event) {
+                if (event.target.closest('.volver-button')) {
+                    mostrarLoader();
+                    setTimeout(() => {
+                        console.log('Botón Volver clickeado');
+                        const viewContainer = document.querySelector('#view');
+                        if (viewContainer) {
+                            viewContainer.remove(); // Elimina el elemento del DOM
+                        }
+                        const mainArticles = document.querySelectorAll('main article');
+                        mainArticles.forEach(article => {
+                            article.style.display = 'block';
+                            article.style.opacity = '1';
+                        });
+                        const proyectoContainer = viewContainer.querySelector('.contenidov');
+                        proyectoContainer.innerHTML = '';
+                        const botonesNav = document.querySelectorAll('#barranav button');
+                        botonesNav.forEach(btn => {
+                            btn.classList.remove('btnfocus');
+                        });
+                        ocultarLoader();
+                        habilitarAutoScroll();
+                    }, 500);
+                }
+            });
+
         }, 500);
     }
 
@@ -306,5 +313,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Cargar proyectos al iniciar la página
     cargarProyectos();
 });
+
 
 
