@@ -161,6 +161,27 @@ detectarArticuloVisible();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const loader = document.querySelector('.lightloader');
 
 function mostrarLoader() {
@@ -182,6 +203,9 @@ function ocultarLoader() {
     }, 500);
 }
 
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     let proyectos;
 
@@ -202,12 +226,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!proyecto) return;
 
-        console.log('Mostrando proyecto:', proyecto);
-
         mostrarLoader();
 
         const viewContainer = document.querySelector('main');
         const viewContainerArticles = viewContainer.querySelectorAll("article");
+        
+        // Estilos para ocultar los artículos
         viewContainer.style.height = "calc(100vh - 40px)";
         viewContainerArticles.forEach(element => {
             element.style.opacity = "0";
@@ -219,13 +243,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Llenar el contenido del proyecto
             const { portada, titulo, categoria, descripcion, lista_de_logros, fotos_procesos, link } = proyecto;
-            const view = template.content.querySelector('#view');
-            view.querySelector('img').src = portada;
-            view.querySelector('h1').textContent = titulo;
-            view.querySelector('span').textContent = categoria;
-            view.querySelector('p').textContent = descripcion;
+            const templateImg = template.content.querySelector('img');
+            const templateH1 = template.content.querySelector('h1');
+            const templateSpan = template.content.querySelector('span');
+            const templateP = template.content.querySelector('p');
+            const listaLogros = template.content.querySelector('ul');
+            
+            // Rellenar elementos con datos del proyecto
+            templateImg.src = portada;
+            templateH1.textContent = titulo;
+            templateSpan.textContent = categoria;
+            templateP.textContent = descripcion;
 
-            const listaLogros = view.querySelector('ul');
             listaLogros.innerHTML = '';
             lista_de_logros.forEach(logro => {
                 const listItem = document.createElement('li');
@@ -242,6 +271,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 listaLogros.appendChild(listItem);
             });
 
+            // Clonar el template y agregarlo al contenedor
             const clone = document.importNode(template.content, true);
             viewContainer.appendChild(clone);
 
@@ -260,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             // Obtener el botón "Visualizar proyecto"
-            const visualizarButton = view.querySelector('#Visualizar');
+            const visualizarButton = document.getElementById('Visualizar');
 
             // Agregar un evento click al botón para abrir el enlace
             visualizarButton.addEventListener('click', function () {
@@ -269,35 +299,35 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            ocultarLoader();
+            ocultarLoader(); // Asumiendo que ocultarLoader() se llama cuando la carga está completa.
+        }, 500);
+    }
 
-            // Agregar evento click al botón "Volver" utilizando event delegation
-            document.addEventListener('click', function (event) {
-                if (event.target.closest('.volver-button')) {
-                    mostrarLoader();
-                    setTimeout(() => {
-                        console.log('Botón Volver clickeado');
-                        const viewContainer = document.querySelector('#view');
-                        if (viewContainer) {
-                            viewContainer.remove(); // Elimina el elemento del DOM
-                        }
-                        const mainArticles = document.querySelectorAll('main article');
-                        mainArticles.forEach(article => {
-                            article.style.display = 'block';
-                            article.style.opacity = '1';
-                        });
-                        const proyectoContainer = viewContainer.querySelector('.contenidov');
-                        proyectoContainer.innerHTML = '';
-                        const botonesNav = document.querySelectorAll('#barranav button');
-                        botonesNav.forEach(btn => {
-                            btn.classList.remove('btnfocus');
-                        });
-                        ocultarLoader();
-                        habilitarAutoScroll();
-                    }, 500);
-                }
+    // Función para volver a la vista de proyectos
+    function volverAProyectos() {
+        mostrarLoader();
+        setTimeout(() => {
+            console.log('Botón Volver clickeado');
+            const viewContainer = document.querySelector('#view');
+            if (viewContainer) {
+                viewContainer.remove(); // Elimina el elemento del DOM
+            }
+            
+            // Mostrar los artículos nuevamente
+            const mainArticles = document.querySelectorAll('main article');
+            mainArticles.forEach(article => {
+                article.style.display = 'block';
+                article.style.opacity = '1';
             });
 
+            // Restaurar los estilos de los botones de navegación
+            const botonesNav = document.querySelectorAll('#barranav button');
+            botonesNav.forEach(btn => {
+                btn.classList.remove('btnfocus');
+            });
+            
+            ocultarLoader();
+            habilitarAutoScroll();
         }, 500);
     }
 
@@ -310,9 +340,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Agregar evento click al botón "Volver"
+    document.addEventListener('click', function (event) {
+        if (event.target.closest('.volver-button')) {
+            volverAProyectos();
+        }
+    });
+
     // Cargar proyectos al iniciar la página
     cargarProyectos();
 });
-
-
 
