@@ -626,7 +626,7 @@ article>h1:after {
 
 .contherr {
     width: 100%;
-    height: 400px;
+   aspect-ratio: 16/9;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(7, 1fr);
