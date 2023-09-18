@@ -69,83 +69,66 @@ window.addEventListener("scroll", () => {
 
 //ANIMACION NSV BTNS
 const botones = document.querySelectorAll('#barranav button');
-let isScrolling = false; // Variable para controlar el estado del scroll
-let isAutoScrollEnabled = true; // Variable para controlar la funcionalidad automática de scroll
+let isScrolling = false;
+let isAutoScrollEnabled = true;
 
-// Función para deshabilitar la funcionalidad automática de scroll
 function deshabilitarAutoScroll() {
     isAutoScrollEnabled = false;
 }
 
-// Función para habilitar la funcionalidad automática de scroll
+
 function habilitarAutoScroll() {
     isAutoScrollEnabled = true;
-    // Llamamos a la función para asegurarnos de que se marque el botón correcto al cargar la página
     detectarArticuloVisible();
 }
 
-// Función para manejar lo que sucede cuando haces clic en los botones de navegación
-function handleButtonClick(boton) {
-    // Quitamos la clase "btnfocus" de todos los botones
-    botones.forEach((btn) => btn.classList.remove('btnfocus'));
 
-    // Añadimos la clase "btnfocus" al botón en el que hiciste clic
+function handleButtonClick(boton) {
+    botones.forEach((btn) => btn.classList.remove('btnfocus'));
     boton.classList.add('btnfocus');
 }
 
 
-// Función para detectar qué artículo se está viendo en la pantalla
+
 function detectarArticuloVisible() {
-    // Verificamos si la página no se está desplazando en ese momento y la funcionalidad automática está habilitada
+
     if (!isScrolling && isAutoScrollEnabled) {
-        // Obtenemos todos los artículos y botones de navegación
         const articulos = document.querySelectorAll('article');
         const botones = document.querySelectorAll('#barranav button');
 
-        // Inicializamos una variable para rastrear el artículo visible
         let articuloVisible = null;
 
-        // Luego, revisamos cada artículo
         articulos.forEach((articulo, index) => {
-            // Obtenemos su posición en la pantalla
+
             const rect = articulo.getBoundingClientRect();
-
-            // Ajustamos un valor de visibilidad en función de la altura del artículo
-            const umbral = rect.height * 0.6; // Puedes cambiar esto según quieras
-
-            // Si el artículo está en gran parte visible en la pantalla
+            const umbral = rect.height * 0.6;
             if (rect.top >= -umbral && rect.bottom <= window.innerHeight + umbral) {
-                // Lo marcamos como el artículo visible
                 articuloVisible = index;
             }
         });
 
-        // Si encontramos un artículo visible
+
         if (articuloVisible !== null) {
-            // Cambiamos la clase del botón correspondiente
             handleButtonClick(botones[articuloVisible]);
         }
     }
 }
 
-// Detectamos si la página está siendo desplazada
+
 window.addEventListener('scroll', () => {
     isScrolling = true;
-
-    // Limpiamos el temporizador anterior (si existe) y configuramos uno nuevo
     clearTimeout(window.scrollTimer);
     window.scrollTimer = setTimeout(function () {
-        isScrolling = false; // Cuando termina el desplazamiento, marcamos que no se está desplazando
-        detectarArticuloVisible(); // Llamamos a la función para actualizar la clase del botón
-    }, 50); // Redujimos el tiempo de espera a 50 milisegundos (puedes cambiar esto)
+        isScrolling = false;
+        detectarArticuloVisible();
+    }, 50);
 
-    // Llamamos a la función de detección de artículo visible si la funcionalidad automática está habilitada
     if (isAutoScrollEnabled) {
         detectarArticuloVisible();
     }
 });
 
-// Asociamos la función de manejo de clics a cada botón
+
 botones.forEach((btn) => {
     btn.addEventListener('click', () => {
         handleButtonClick(btn);
@@ -153,7 +136,7 @@ botones.forEach((btn) => {
             const locationValue = btn.getAttribute('onclick');
             const ubicacion = locationValue.match(/'#(.*?)'/);
             console.log(ubicacion[1]);
-            volverAProyectos(); // Elimina el elemento del DOM
+            volverAProyectos();
             setTimeout(() => {
                 window.location.href = "index.html#" + ubicacion[1];
             }, 500);
@@ -161,7 +144,7 @@ botones.forEach((btn) => {
     });
 });
 
-// Llamamos a la función para asegurarnos de que se marque el botón correcto al cargar la página
+
 detectarArticuloVisible();
 
 
@@ -178,68 +161,13 @@ detectarArticuloVisible();
 
 
 
-// Función para volver a la vista de proyectos
-function volverAProyectos() {
-    mostrarLoader();
-    setTimeout(() => {
-
-        const viewContainer = document.querySelector('#view');
-        if (viewContainer) {
-            viewContainer.remove(); 
-        }
-        const mainArticles = document.querySelectorAll('main article');
-        mainArticles.forEach(article => {
-            article.style.display = 'block';
-            article.style.opacity = '1';
-        });
-        const botonesNav = document.querySelectorAll('#barranav button');
-        botonesNav.forEach(btn => {
-            btn.classList.remove('btnfocus');
-        });
-
-        ocultarLoader();
-        habilitarAutoScroll();
-
-        document.documentElement.style.scrollBehavior = 'auto';
-        window.location.href = "index.html#proyectos";
-        setTimeout(() => {
-            document.documentElement.style.scrollBehavior = 'smooth';
-        }, 50);
-    }, 500);
-}
 
 
-
-
-const loader = document.querySelector('.lightloader');
-
-function mostrarLoader() {
-    window.scrollTo(0, 0);
-    document.body.style.overflow = 'hidden';
-    loader.style.display = 'flex';
-    setTimeout(() => {
-        loader.style.opacity = '1';
-    }, 0);
-}
-function ocultarLoader() {
-    botones.forEach((btn) => btn.classList.remove('btnfocus'));
-    deshabilitarAutoScroll()
-    loader.style.opacity = '0';
-    setTimeout(() => {
-        loader.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }, 500);
-}
-
-
-
-
-
-
+// FUNCIONALIDAD DE LOS PROYECTOS
 document.addEventListener("DOMContentLoaded", function () {
     let proyectos;
 
-    
+
     async function cargarProyectos() {
         try {
             const response = await fetch('proyectos.json');
@@ -299,11 +227,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 listaLogros.appendChild(listItem);
             });
 
-            
+
             const clone = document.importNode(template.content, true);
             viewContainer.appendChild(clone);
 
-            
+
             const carouselContainer = document.querySelector('.carousel');
             carouselContainer.innerHTML = '';
             const flickity = new Flickity(carouselContainer, { draggable: "true" });
@@ -318,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
 
-            
+
             const visualizarButton = document.getElementById('Visualizar');
             visualizarButton.addEventListener('click', function () {
                 if (link) {
@@ -327,10 +255,9 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
 
-            ocultarLoader(); 
+            ocultarLoader();
         }, 500);
     }
-
 
 
     const botonesProyectos = document.querySelectorAll('.pro');
@@ -350,3 +277,63 @@ document.addEventListener("DOMContentLoaded", function () {
     cargarProyectos();
 });
 
+
+
+
+
+
+
+function volverAProyectos() {
+    mostrarLoader();
+    setTimeout(() => {
+
+        const viewContainer = document.querySelector('#view');
+        if (viewContainer) {
+            viewContainer.remove();
+        }
+        const mainArticles = document.querySelectorAll('main article');
+        mainArticles.forEach(article => {
+            article.style.display = 'block';
+            article.style.opacity = '1';
+        });
+        const botonesNav = document.querySelectorAll('#barranav button');
+        botonesNav.forEach(btn => {
+            btn.classList.remove('btnfocus');
+        });
+
+
+        document.documentElement.style.scrollBehavior = 'auto';
+        window.location.href = "index.html#proyectos";
+        setTimeout(() => {
+            document.documentElement.style.scrollBehavior = 'smooth';
+        }, 50);
+
+
+        ocultarLoader();
+        habilitarAutoScroll();
+    }, 500);
+}
+
+
+
+
+const loader = document.querySelector('.lightloader');
+
+function mostrarLoader() {
+    window.scrollTo(0, 0);
+    document.body.style.overflow = 'hidden';
+    loader.style.display = 'flex';
+    setTimeout(() => {
+        loader.style.opacity = '1';
+    }, 0);
+}
+
+function ocultarLoader() {
+    botones.forEach((btn) => btn.classList.remove('btnfocus'));
+    deshabilitarAutoScroll()
+    loader.style.opacity = '0';
+    setTimeout(() => {
+        loader.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }, 500);
+}
