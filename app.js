@@ -6,6 +6,14 @@ mensajeTextarea.addEventListener("input", function () {
 });
 
 
+// animacion header scroll
+window.addEventListener("scroll", () => {
+    menuFlotante.classList.toggle("scrollhr", window.scrollY > 0);
+});
+
+
+
+
 
 
 
@@ -44,19 +52,6 @@ closeNav.addEventListener("click", () => {
 });
 
 
-
-
-
-
-
-
-
-
-
-// animacion header scroll
-window.addEventListener("scroll", () => {
-    menuFlotante.classList.toggle("scrollhr", window.scrollY > 0);
-});
 
 
 
