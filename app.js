@@ -93,6 +93,7 @@ function handleButtonClick(boton) {
     boton.classList.add('btnfocus');
 }
 
+
 // Función para detectar qué artículo se está viendo en la pantalla
 function detectarArticuloVisible() {
     // Verificamos si la página no se está desplazando en ese momento y la funcionalidad automática está habilitada
@@ -146,7 +147,18 @@ window.addEventListener('scroll', () => {
 
 // Asociamos la función de manejo de clics a cada botón
 botones.forEach((btn) => {
-    btn.addEventListener('click', () => handleButtonClick(btn));
+    btn.addEventListener('click', () => {
+        handleButtonClick(btn);
+        if (document.querySelector('#view')) {
+            const locationValue = btn.getAttribute('onclick');
+            const ubicacion = locationValue.match(/'#(.*?)'/);
+            console.log(ubicacion[1]);
+            volverAProyectos(); // Elimina el elemento del DOM
+            setTimeout(() => {
+                window.location.href = "index.html#" + ubicacion[1];
+            }, 500);
+        }
+    });
 });
 
 // Llamamos a la función para asegurarnos de que se marque el botón correcto al cargar la página
@@ -166,18 +178,33 @@ detectarArticuloVisible();
 
 
 
+// Función para volver a la vista de proyectos
+function volverAProyectos() {
+    mostrarLoader();
+    setTimeout(() => {
+        console.log('Botón Volver clickeado');
+        const viewContainer = document.querySelector('#view');
+        if (viewContainer) {
+            viewContainer.remove(); // Elimina el elemento del DOM
+        }
 
+        // Mostrar los artículos nuevamente
+        const mainArticles = document.querySelectorAll('main article');
+        mainArticles.forEach(article => {
+            article.style.display = 'block';
+            article.style.opacity = '1';
+        });
 
+        // Restaurar los estilos de los botones de navegación
+        const botonesNav = document.querySelectorAll('#barranav button');
+        botonesNav.forEach(btn => {
+            btn.classList.remove('btnfocus');
+        });
 
-
-
-
-
-
-
-
-
-
+        ocultarLoader();
+        habilitarAutoScroll();
+    }, 500);
+}
 
 
 
@@ -206,6 +233,8 @@ function ocultarLoader() {
 
 
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
     let proyectos;
 
@@ -230,7 +259,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const viewContainer = document.querySelector('main');
         const viewContainerArticles = viewContainer.querySelectorAll("article");
-        
+
         // Estilos para ocultar los artículos
         viewContainer.style.height = "calc(100vh - 40px)";
         viewContainerArticles.forEach(element => {
@@ -248,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const templateSpan = template.content.querySelector('span');
             const templateP = template.content.querySelector('p');
             const listaLogros = template.content.querySelector('ul');
-            
+
             // Rellenar elementos con datos del proyecto
             templateImg.src = portada;
             templateH1.textContent = titulo;
@@ -303,33 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 500);
     }
 
-    // Función para volver a la vista de proyectos
-    function volverAProyectos() {
-        mostrarLoader();
-        setTimeout(() => {
-            console.log('Botón Volver clickeado');
-            const viewContainer = document.querySelector('#view');
-            if (viewContainer) {
-                viewContainer.remove(); // Elimina el elemento del DOM
-            }
-            
-            // Mostrar los artículos nuevamente
-            const mainArticles = document.querySelectorAll('main article');
-            mainArticles.forEach(article => {
-                article.style.display = 'block';
-                article.style.opacity = '1';
-            });
 
-            // Restaurar los estilos de los botones de navegación
-            const botonesNav = document.querySelectorAll('#barranav button');
-            botonesNav.forEach(btn => {
-                btn.classList.remove('btnfocus');
-            });
-            
-            ocultarLoader();
-            habilitarAutoScroll();
-        }, 500);
-    }
 
     // Agregar eventos click a los botones de proyectos
     const botonesProyectos = document.querySelectorAll('.pro');

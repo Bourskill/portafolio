@@ -831,6 +831,7 @@ form>div {
 
     border-radius: 20px;
     background-color: white;
+    border: 1px solid white;
     color: rgb(82, 82, 82);
     overflow: hidden;
 
