@@ -203,6 +203,13 @@ function volverAProyectos() {
 
         ocultarLoader();
         habilitarAutoScroll();
+
+        document.documentElement.style.scrollBehavior = 'auto';
+        setTimeout(() => {
+            document.documentElement.style.scrollBehavior = 'smooth';
+        }, 50);
+        window.location.href = "index.html#proyectos";
+
     }, 500);
 }
 
