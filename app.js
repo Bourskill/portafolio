@@ -182,20 +182,16 @@ detectarArticuloVisible();
 function volverAProyectos() {
     mostrarLoader();
     setTimeout(() => {
-        console.log('Botón Volver clickeado');
+
         const viewContainer = document.querySelector('#view');
         if (viewContainer) {
-            viewContainer.remove(); // Elimina el elemento del DOM
+            viewContainer.remove(); 
         }
-
-        // Mostrar los artículos nuevamente
         const mainArticles = document.querySelectorAll('main article');
         mainArticles.forEach(article => {
             article.style.display = 'block';
             article.style.opacity = '1';
         });
-
-        // Restaurar los estilos de los botones de navegación
         const botonesNav = document.querySelectorAll('#barranav button');
         botonesNav.forEach(btn => {
             btn.classList.remove('btnfocus');
@@ -205,11 +201,10 @@ function volverAProyectos() {
         habilitarAutoScroll();
 
         document.documentElement.style.scrollBehavior = 'auto';
+        window.location.href = "index.html#proyectos";
         setTimeout(() => {
             document.documentElement.style.scrollBehavior = 'smooth';
         }, 50);
-        window.location.href = "index.html#proyectos";
-
     }, 500);
 }
 
@@ -226,7 +221,6 @@ function mostrarLoader() {
         loader.style.opacity = '1';
     }, 0);
 }
-
 function ocultarLoader() {
     botones.forEach((btn) => btn.classList.remove('btnfocus'));
     deshabilitarAutoScroll()
@@ -245,7 +239,7 @@ function ocultarLoader() {
 document.addEventListener("DOMContentLoaded", function () {
     let proyectos;
 
-    // Función para cargar proyectos desde JSON
+    
     async function cargarProyectos() {
         try {
             const response = await fetch('proyectos.json');
@@ -255,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Función para mostrar un proyecto
+
     function mostrarProyecto(id) {
         const template = document.getElementById('viewproyect');
         const proyecto = proyectos.find(item => item.id === id);
@@ -266,18 +260,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const viewContainer = document.querySelector('main');
         const viewContainerArticles = viewContainer.querySelectorAll("article");
-
-        // Estilos para ocultar los artículos
         viewContainer.style.height = "calc(100vh - 40px)";
         viewContainerArticles.forEach(element => {
             element.style.opacity = "0";
             element.style.display = "none";
         });
 
+
         setTimeout(() => {
             viewContainer.style.height = "";
 
-            // Llenar el contenido del proyecto
             const { portada, titulo, categoria, descripcion, lista_de_logros, fotos_procesos, link } = proyecto;
             const templateImg = template.content.querySelector('img');
             const templateH1 = template.content.querySelector('h1');
@@ -285,11 +277,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const templateP = template.content.querySelector('p');
             const listaLogros = template.content.querySelector('ul');
 
-            // Rellenar elementos con datos del proyecto
             templateImg.src = portada;
             templateH1.textContent = titulo;
             templateSpan.textContent = categoria;
             templateP.textContent = descripcion;
+
 
             listaLogros.innerHTML = '';
             lista_de_logros.forEach(logro => {
@@ -307,11 +299,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 listaLogros.appendChild(listItem);
             });
 
-            // Clonar el template y agregarlo al contenedor
+            
             const clone = document.importNode(template.content, true);
             viewContainer.appendChild(clone);
 
-            // Crear el carrusel de fotos
+            
             const carouselContainer = document.querySelector('.carousel');
             carouselContainer.innerHTML = '';
             const flickity = new Flickity(carouselContainer, { draggable: "true" });
@@ -325,23 +317,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 flickity.append(cell);
             });
 
-            // Obtener el botón "Visualizar proyecto"
-            const visualizarButton = document.getElementById('Visualizar');
 
-            // Agregar un evento click al botón para abrir el enlace
+            
+            const visualizarButton = document.getElementById('Visualizar');
             visualizarButton.addEventListener('click', function () {
                 if (link) {
                     window.open(link, '_blank');
                 }
             });
 
-            ocultarLoader(); // Asumiendo que ocultarLoader() se llama cuando la carga está completa.
+
+            ocultarLoader(); 
         }, 500);
     }
 
 
 
-    // Agregar eventos click a los botones de proyectos
     const botonesProyectos = document.querySelectorAll('.pro');
     botonesProyectos.forEach(boton => {
         boton.addEventListener('click', function () {
@@ -350,14 +341,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Agregar evento click al botón "Volver"
     document.addEventListener('click', function (event) {
         if (event.target.closest('.volver-button')) {
             volverAProyectos();
         }
     });
 
-    // Cargar proyectos al iniciar la página
     cargarProyectos();
 });
 
