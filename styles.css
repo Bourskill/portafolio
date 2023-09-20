@@ -19,7 +19,7 @@ body {
 .hropciones {
     width: 95%;
 
-    border-radius: 15px;
+    border-radius: 10px;
     background-color: transparent;
     border: 2px solid white;
     color: white;
@@ -38,12 +38,12 @@ body {
 
 .hropciones i {
     color: white;
-    font-size: 120%;
+    font-size: 130%;
 }
 
 .hropciones h1 {
     margin: 0;
-    font-size: 100%;
+    font-size: 120%;
     margin-right: 15px;
 }
 
@@ -991,6 +991,9 @@ form>div {
 
 /* Estilos para pantallas más pequeñas */
 @media (max-width: 768px) {
+    body {
+        font-size: 90%;
+    }
     #proyectos {
         padding: 70px 30px 100px 30px;
     }
