@@ -23,7 +23,6 @@ body {
     background-color: transparent;
     border: 2px solid white;
     color: white;
-    padding: 10px;
     margin: 0 auto;
 
     position: absolute;
@@ -39,14 +38,14 @@ body {
 
 .hropciones i {
     color: white;
-    font-size: 150%;
+    font-size: 120%;
     -webkit-text-stroke: 2px white;
 }
 
 .hropciones h1 {
     margin: 0;
-    font-size: 120%;
-    margin-right: 10px;
+    font-size: 100%;
+    margin-right: 15px;
 }
 
 .hrmenu {
