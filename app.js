@@ -128,10 +128,9 @@ botones.forEach((btn) => {
     btn.addEventListener('click', () => {
         handleButtonClick(btn);
         if (document.querySelector('#view')) {
+            volverAProyectos();
             const locationValue = btn.getAttribute('onclick');
             const ubicacion = locationValue.match(/'#(.*?)'/);
-            console.log(ubicacion[1]);
-            volverAProyectos();
             setTimeout(() => {
                 window.location.href = "index.html#" + ubicacion[1];
             }, 500);
