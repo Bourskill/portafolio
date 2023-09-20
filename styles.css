@@ -68,9 +68,10 @@ body {
 /* Estilos de la barra de navegación */
 nav {
     width: min(30%, 300px);
+    height: fit-content;
     background-color: var(--azul1);
     color: white;
-    padding: 25px;
+    padding: 25px 25px 40px 25px ;
     border-radius: 20px;
     top: 40px;
     position: sticky;
