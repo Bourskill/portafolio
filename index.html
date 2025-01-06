@@ -7,9 +7,8 @@
     <title>Curriculum </title>
 
 
-    <!-- Flikity -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
     <!-- Font-awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -58,9 +57,6 @@
         <button onclick="window.location.href='#acerca';">
             <i class="fa-solid fa-user"></i></i><span>Acerca de mí</span>
         </button>
-        <button onclick="window.location.href='#educacion';">
-            <i class="fa-solid fa-graduation-cap"></i><span>Educación</span>
-        </button>
         <button onclick="window.location.href='#areas';">
             <i class="fa-solid fa-network-wired"></i><span>Áreas</span>
         </button>
@@ -69,6 +65,9 @@
         </button>
         <button onclick="window.location.href='#proyectos';">
             <i class="fa-solid fa-briefcase"></i><span>Proyectos</span>
+        </button>
+        <button onclick="window.location.href='#educacion';">
+            <i class="fa-solid fa-graduation-cap"></i><span>Educación</span>
         </button>
         <button onclick="window.location.href='#herramientas';">
             <i class="fa-solid fa-laptop-code"></i><span>Herramientas</span>
@@ -81,11 +80,10 @@
     <main class="contenedor">
 
         <article id="inicio">
-            <img src="img/portada.webp" alt="">
+            <img src="img/portada.webp" alt="" loading="lazy">
             <div class="titulo">
-                <h1>¡Hola, soy Richard!</h1>
-                <p>¡Bienvenid@ a mi rincón creativo en la web! Aquí encontrarás mi pasión por el diseño gráfico
-                    plasmada en pixels y colores. ¡Explora a gusto y descubre mi mundo visual! </p>
+                <h1>¡Holaa!</h1>
+                <p>Bienvenido a mi portafolio, donde muestro mi enfoque creativo en el diseño gráfico, ofreciendo soluciones visuales únicas con atención al detalle.</p>
             </div>
         </article>
 
@@ -93,15 +91,11 @@
             <h1>Acerca de mí</h1>
             <div class="descriptext">
                 <div class="fotodes">
-                    <img src="img/foto-yo-hv.webp" alt="">
+                    <img src="img/foto-yo-hv.webp" alt="" loading="lazy">
                 </div>
                 <div class="textdes">
-                    <h2>Hola,</h2>
-                    <p>Soy un diseñador gráfico apasionado con experiencia en Illustrator, Photoshop y edición de video,
-                        además de conocimientos Básicos en redes sociales como TikTok, Facebook e Instagram. Mi enfoque
-                        está en el diseño web, y mi habilidad para trabajar en equipo me hace el
-                        candidato ideal para impulsar tus campañas publicitarias. <br><br> ¡Emocionado por contribuir a
-                        tu equipo y lograr resultados excepcionales! ¡Hablemos pronto!</p>
+                    <h2>Me presento,</h2>
+                    <p>Soy un profesional con experiencia en diseño gráfico, personalización de productos y desarrollo digital. Me especializo en crear experiencias visuales únicas, desde la personalización de artículos hasta el diseño de sitios web optimizados y contenido para redes sociales. Mi objetivo es ofrecer resultados de alta calidad que refuercen la identidad y presencia de las marcas.</p>
                     <div class="infodes">
                         <button onclick="window.location.href='RICHARD_GARCIA_HV_2023.pdf';">
                             <i class="fa-solid fa-cloud-arrow-down"></i><span>Descargar HV</span>
@@ -112,6 +106,123 @@
                         </button>
                     </div>
                 </div>
+            </div>
+        </article>
+
+        <article id="areas">
+            <h1>Áreas de Experiencia</h1>
+            <div class="contservices">
+                <div class="servicio">
+                    <i class="fa-solid fa-palette"></i>
+                    <h3>Diseño Gráfico y Branding</h3>
+                    <p>Creación de identidades visuales completas, desde logotipos hasta materiales promocionales, para fortalecer la presencia de la marca.</p>
+                </div>
+                <div class="servicio">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <h3>Creación de Contenido Digital y Marketing Visual</h3>
+                    <p>Diseño de contenido visual para redes sociales y campañas publicitarias, aumentando el engagement y la visibilidad de las marcas.</p>
+                </div>
+                <div class="servicio">
+                    <i class="fa-solid fa-terminal"></i>
+                    <h3>Desarrollo Web y Diseño de Páginas</h3>
+                    <p>Diseño y desarrollo de sitios web personalizados y páginas de aterrizaje, optimizados para una excelente experiencia de usuario y conversiones.</p>
+                </div>
+                <div class="servicio">
+                    <i class="fa-solid fa-shirt"></i>
+                    <h3>Impresión y Personalización de Productos</h3>
+                    <p>Personalización de productos utilizando técnicas avanzadas de impresión, garantizando artículos únicos y de alta calidad.</p>
+                </div>  
+
+            </div>
+        </article>
+
+
+
+        <article id="experiencia">
+            <h1>Experiencia</h1>
+            <div class="contexp">
+                <div class="linexp">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="lineheight">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="exptext">
+
+                    <div class="exp">
+                        <h4>Insumos<br> Artes graficas</h4>
+                        <div class="expinfo">
+                            <h3>Diseñador Gráfico y Operario de Producción.</h3>
+                            <p>participé en la personalización de productos como tazas, termos y camisetas, utilizando técnicas como sublimación, DTF y vinilo. <br><br>Mi labor consistía en colaborar para asegurar que los diseños se adaptaran adecuadamente a cada producto, manteniendo altos estándares de calidad.<br><br> También apoyé en la creación de contenido visual para redes sociales y videos con el objetivo de promocionar los productos. Además, tuve la oportunidad de operar la impresora DTF, aprendiendo los aspectos básicos de su funcionamiento y los procesos de impresión.
+                            </p>
+                        </div>
+                        <h5>2024-2025</h5>
+                    </div>
+
+                    <div class="exp">
+                        <h4>Avant Garde</h4>
+                        <div class="expinfo">
+                            <h3>Profesor de Diseño Gráfico y Web</h3>
+                            <p>Como profesor de diseño gráfico, me enfoqué en enseñar Adobe Illustrator, diseño web con
+                                HTML y CSS, y la creación de piezas publicitarias.<br><br> Durante mi tiempo como
+                                docente,
+                                inspiré a estudiantes, ayudándoles a desarrollar habilidades creativas y técnicas
+                                sólidas en estos campos, mientras fomentaba la comprensión profunda de las herramientas
+                                de diseño.</p>
+                        </div>
+                        <h5>2022-2023</h5>
+                    </div>
+
+                    <div class="exp">
+                        <h4>MT Publicidad</h4>
+                        <div class="expinfo">
+                            <h3>Diseñador Gráfico y Operario de Producción.</h3>
+                            <p>En mi rol, manipulé software de edición, especialmente la suit de Adobe, y operé
+                                maquinaria de producción, incluyendo cortadoras láser, plotters de corte e impresion y
+                                termofijadoras.
+                                <br><br> Esto me permitió abordar proyectos de manera integral y garantizar resultados
+                                de alta calidad en diversos materiales y productos.
+                            </p>
+                        </div>
+                        <h5>2021-2022</h5>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+
+
+
+
+        <article id="proyectos">
+            <h1>Proyectos</h1>
+            <div class="proyects">
+                <button class="pro" data-id="1">
+                    <img src="img/proyectos/mrtoston/recurso3.png" alt="" loading="lazy">
+                    <h3>REDISEÑO DE LOGO</h3>
+                </button>
+                <button class="pro" data-id="2">
+                    <img src="img/proyectos/itech/Recurso4.png" alt="" loading="lazy">
+                    <h3>CREACION DE LOGO</h3>
+                </button>
+                <button class="pro" data-id="3">
+                    <img src="img/proyectos/plantartia/Recurso3.png" alt="" loading="lazy">
+                    <h3>MANUAL DE MARCA</h3>
+                </button>
+                <button class="pro" data-id="4">
+                    <img src="img/proyectos/club47/Recurso3.png" alt="" loading="lazy">
+                    <h3>MANUAL DE MARCA</h3>
+                </button>
+                <button class="pro" data-id="5">
+                    <img src="img/proyectos/slider/images-solid.svg" alt="" loading="lazy">
+                    <h3>SLIDER PERSONALIZADO - WEB</h3>
+                </button>
+                <button class="pro" data-id="6">
+                    <img src="img/proyectos/tienda/shop-solid.svg" alt="" loading="lazy">
+                    <h3>TIENDA WHATSAPP - WEB</h3>
+                </button>
             </div>
         </article>
 
@@ -175,147 +286,40 @@
                     diseño.</i></p>
         </article>
 
-        <article id="areas">
-            <h1>Áreas de Experiencia</h1>
-            <div class="contservices">
-                <div class="servicio">
-                    <i class="fa-solid fa-palette"></i>
-                    <h3>Diseño de Logotipos y Branding.</h3>
-                    <p>Logotipos memorables y branding único que representan la esencia de tu negocio y lo hacen
-                        destacar en el mercado.</p>
-                </div>
-                <div class="servicio">
-                    <i class="fa-solid fa-share-nodes"></i>
-                    <h3>Diseño de Contenido para Redes Sociales.</h3>
-                    <p>Imágenes y anuncios atractivos que aumentan tu presencia en las redes sociales y atraen a
-                        tu audiencia objetivo.</p>
-                </div>
-                <div class="servicio">
-                    <i class="fa-solid fa-map"></i>
-                    <h3>Diseño de Material Promocional.</h3>
-                    <p>Material promocional, como pósteres y folletos, que resalta tu marca y productos en
-                        eventos y campañas. </p>
-                </div>
-                <div class="servicio">
-                    <i class="fa-solid fa-terminal"></i>
-                    <h3>Diseño Web Personalizado.</h3>
-                    <p>Sitios web personalizados con diseño excepcional y adaptados a todos los dispositivos.</p>
-                </div>
-                <div class="servicio">
-                    <i class="fa-solid fa-mobile-screen"></i>
-                    <h3>Diseño de Páginas de Aterrizaje (Landing Pages).</h3>
-                    <p>Páginas de aterrizaje que potencian tus campañas de marketing y capturan clientes potenciales.
-                    </p>
-                </div>
-                <div class="servicio">
-                    <i class="fa-solid fa-shirt"></i>
-                    <h3>Servicios de Impresión Personalizados.</h3>
-                    <p>Servicios de impresión de alta calidad para hacer realidad tus ideas en productos físicos.</p>
-                </div>
-
-            </div>
-        </article>
-
-
-
-        <article id="experiencia">
-            <h1>Experiencia</h1>
-            <div class="contexp">
-                <div class="linexp">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="lineheight">
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                    </div>
-                </div>
-                <div class="exptext">
-                    <div class="exp">
-                        <h4>Avant Garde</h4>
-                        <div class="expinfo">
-                            <h3>Profesor de Diseño Gráfico y Web</h3>
-                            <p>Como profesor de diseño gráfico, me enfoqué en enseñar Adobe Illustrator, diseño web con
-                                HTML y CSS, y la creación de piezas publicitarias.<br><br> Durante mi tiempo como
-                                docente,
-                                inspiré a estudiantes, ayudándoles a desarrollar habilidades creativas y técnicas
-                                sólidas en estos campos, mientras fomentaba la comprensión profunda de las herramientas
-                                de diseño.</p>
-                        </div>
-                        <h5>2022-2023</h5>
-                    </div>
-                    <div class="exp">
-                        <h4>MT Publicidad</h4>
-                        <div class="expinfo">
-                            <h3>Diseñador Gráfico y Operario de Producción.</h3>
-                            <p>En mi rol, manipulé software de edición, especialmente la suit de Adobe, y operé
-                                maquinaria de producción, incluyendo cortadoras láser, plotters de corte e impresion y
-                                termofijadoras.
-                                <br><br> Esto me permitió abordar proyectos de manera integral y garantizar resultados
-                                de alta calidad en diversos materiales y productos.
-                            </p>
-                        </div>
-                        <h5>2021-2022</h5>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-
-
-
-        <article id="proyectos">
-            <h1>Proyectos</h1>
-            <div class="proyects">
-                <button class="pro" data-id="1">
-                    <img src="img/proyectos/mrtoston/recurso3.png" alt="">
-                    <h3>REDISEÑO DE LOGO</h3>
-                </button>
-                <button class="pro" data-id="2">
-                    <img src="img/proyectos/itech/Recurso4.png" alt="">
-                    <h3>CREACION DE LOGO</h3>
-                </button>
-                <button class="pro" data-id="3">
-                    <img src="img/proyectos/plantartia/Recurso3.png" alt="">
-                    <h3>MANUAL DE MARCA</h3>
-                </button>
-                <button class="pro" data-id="4">
-                    <img src="img/proyectos/club47/Recurso3.png" alt="">
-                    <h3>MANUAL DE MARCA</h3>
-                </button>
-                <button class="pro" data-id="5">
-                    <img src="img/proyectos/slider/images-solid.svg" alt="">
-                    <h3>SLIDER PERSONALIZADO - WEB</h3>
-                </button>
-                <button class="pro" data-id="6">
-                    <img src="img/proyectos/tienda/shop-solid.svg" alt="">
-                    <h3>TIENDA WHATSAPP - WEB</h3>
-                </button>
-            </div>
-        </article>
-
-
 
         <article id="herramientas">
             <h1>Herramientas</h1>
             <div class="contherr">
                 <button onclick="window.open('https://www.adobe.com/es/products/illustrator.html', '_blank'); "
                     class="herr">
-                    <img src="img/icons/illustrator_6422688.svg" alt="Logo de illustrator">
+                    <img src="img/icons/illustrator_6422688.svg" alt="Logo de illustrator" loading="lazy">
                 </button>
                 <button onclick="window.open('https://code.visualstudio.com', '_blank');" class="herr">
-                    <img src="img/icons/vscode.svg" alt="logo de vscode">
+                    <img src="img/icons/vscode.svg" alt="logo de vscode" loading="lazy">
                 </button>
                 <button onclick="window.open('https://www.adobe.com/es/products/photoshop.html', '_blank'); "
                     class="herr">
-                    <img src="img/icons/photoshop_6422739.svg" alt="Logo de photoshop">
+                    <img src="img/icons/photoshop_6422739.svg" alt="Logo de photoshop" loading="lazy">
+                </button>
+                <button onclick="window.open('https://www.coreldraw.com/la/?srsltid=AfmBOooUTkqkYyooviVdxdie5iAR3Fmt9aXgFgHEPB2CWznJ5A5hFhdX', '_blank');"
+                    class="herr">
+                    <img src="img/icons/coreldraw-seeklogo.svg" alt="Logo de coreldraw" loading="lazy">
+                </button>
+                 <button onclick="window.open('https://www.canva.com/es_419/', '_blank');"
+                    class="herr">
+                    <img src="img/icons/canva-white.svg" alt="Logo de canva" loading="lazy">
                 </button>
                 <button onclick="window.open('https://www.adobe.com/es/products/aftereffects.html', '_blank'); "
                     class="herr">
-                    <img src="img/icons/after-effects_6422654.svg" alt="Logo de after effects">
+                    <img src="img/icons/after-effects_6422654.svg" alt="Logo de after effects" loading="lazy">
                 </button>
                 <button onclick="window.open('https://www.adobe.com/es/products/premiere.html', '_blank');"
                     class="herr">
-                    <img src="img/icons/premiere_6422745.svg" alt="Logo de premiere pro">
+                    <img src="img/icons/premiere_6422745.svg" alt="Logo de premiere pro" loading="lazy">
+                </button>
+                <button onclick="window.open('https://www.capcut.com/my-edit?start_tab=video', '_blank');"
+                    class="herr">
+                    <img src="img/icons/capcut-seeklogo-2.svg" alt="Logo de capcut" loading="lazy">
                 </button>
             </div>
         </article>
