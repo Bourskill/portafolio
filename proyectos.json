@@ -78,22 +78,25 @@
     },
     {
         "id": 5,
-        "titulo": "SLIDER PERSONALIZADO",
+        "titulo": "CATALOGO DE PRENDAS",
         "categoria": "DISEÑO WEB",
-        "descripcion": "En este proyecto de diseño web, se creó un sitio que se centra exclusivamente en un slider de imágenes personalizado utilizando la librería Flickity. Este slider se destaca por dos características distintivas: la reducción gradual de la opacidad de las imágenes a medida que se desplazan fuera de la pantalla y el efecto parallax que permite que el contenedor se mueva mientras la imagen se mantiene en la ubicación central de la pantalla. Estas cualidades únicas presentaron un desafío significativo, ya que no existen librerías preconfiguradas que ofrezcan estas características de manera sencilla.",
-        "link": "https://bourskill.github.io/slider_personalizado/",
+        "descripcion": "Este proyecto fue realizado como parte de mi proyecto de grado en el SENA. La idea surgió con el propósito de crear una página web simple que incluyera un slider de productos, una sección de visualización de productos y un carrito de compras con funcionalidades básicas como agregar y eliminar productos. Aunque no se incluyó una pasarela de pago, se implementó la estructura básica del proceso de compra. El proyecto cuenta con un diseño moderno con un efecto de morfismo y la posibilidad de alternar entre un tema oscuro y claro. El desarrollo se llevó a cabo utilizando HTML, CSS y JavaScript puro, sin la utilización de plugins, lo que supuso un desafío adicional, ya que el aprendizaje de JavaScript fue autodidacta, ya que en el SENA solo me enseñaron HTML y CSS.",
+        "link": "https://bourskill.github.io/criyeak-proyect_sena/",
         "lista_de_logros": [
-            "Opacidad Gradual: Implementar la reducción gradual de la opacidad de las imágenes a medida que salen de la pantalla requirió un conocimiento sólido de HTML, CSS y JavaScript. Se superó este reto a través de la investigación y la adaptación de técnicas avanzadas.",
-            "Efecto Parallax: Lograr el efecto parallax en el que el contenedor se desplaza mientras la imagen permanece en la ubicación central implicó una manipulación precisa del DOM y eventos de desplazamiento. Se superó este reto gracias a la experimentación y la adaptación de soluciones personalizadas.",
-            "Responsividad y Resistencia a Errores de Tamaño de Ventana: Se garantizó que el diseño web fuera responsivo y resistente a cambios bruscos en el tamaño de la ventana del navegador, evitando bugs relacionados con el mal uso del tamaño de la ventana."
+          "Slider de Productos: Implementación de un slider dinámico para visualizar los productos. Esta funcionalidad permite navegar entre diferentes imágenes de productos de manera fluida.",
+          "Carrito de Compras: Desarrollo de un carrito básico con funcionalidades de agregar y eliminar productos. A pesar de no contar con pasarela de pago, se implementó la lógica de la compra.",
+          "Tema Oscuro y Claro: Se añadió un diseño con modo oscuro y claro, ofreciendo una mejor experiencia de usuario según las preferencias de cada persona.",
+          "Efecto Morfismo: Aplicación de un estilo de morfismo para crear una interfaz visualmente atractiva y moderna.",
+          "Desarrollo Empírico en JavaScript: Todo el código de la funcionalidad fue hecho con JavaScript puro, sin librerías externas, lo que implicó aprender y aplicar los conceptos de programación mediante prueba y error."
         ],
         "portada": "img/proyectos/slider/slider_personalizado.png",
         "fotos_procesos": {
-            "foto1": "img/proyectos/slider/captura.png",
-            "foto2": "img/proyectos/slider/captura1.png",
-            "foto3": "img/proyectos/slider/captura2.png"
+          "foto1": "img/proyectos/slider/captura.png",
+          "foto2": "img/proyectos/slider/captura1.png",
+          "foto3": "img/proyectos/slider/captura2.png"
         }
-    },
+      },
+      
     {
         "id": 6,
         "titulo": "TIENDA POR WHATSAPP",
