@@ -89,11 +89,12 @@
           "Efecto Morfismo: Aplicación de un estilo de morfismo para crear una interfaz visualmente atractiva y moderna.",
           "Desarrollo Empírico en JavaScript: Todo el código de la funcionalidad fue hecho con JavaScript puro, sin librerías externas, lo que implicó aprender y aplicar los conceptos de programación mediante prueba y error."
         ],
-        "portada": "img/proyectos/slider/slider_personalizado.png",
+        "portada": "img/proyectos/catalogo/5.png",
         "fotos_procesos": {
-          "foto1": "img/proyectos/slider/captura.png",
-          "foto2": "img/proyectos/slider/captura1.png",
-          "foto3": "img/proyectos/slider/captura2.png"
+          "foto1": "img/proyectos/catalogo/1.png",
+          "foto2": "img/proyectos/catalogo/2.png",
+          "foto3": "img/proyectos/catalogo/3.png",
+          "foto4": "img/proyectos/catalogo/4.png"
         }
       },
       
